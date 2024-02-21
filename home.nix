@@ -34,6 +34,23 @@
     userEmail = "henrigros1@gmail.com";
   };
 
+  programs.zsh = {
+    enable = true;
+    shellAliases = {
+      ll = "ls -al";
+      update = "sudo nixos-rebuild switch";
+    };
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" ];
+      theme = "robbyrussell";
+    };
+    syntaxHighlighting.enable = true;
+    enableAutosuggestions = true;
+    enableCompletion = true;
+  };
+
+
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
