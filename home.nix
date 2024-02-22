@@ -59,6 +59,11 @@
       source = ./nvim;
       target = ".config/nvim";
     };
+    hyprland = {
+      enable = true;
+      source = ./hypr;
+      target = ".config/hypr";
+    };
   };
 
   home.sessionVariables = {
