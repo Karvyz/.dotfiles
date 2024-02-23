@@ -45,11 +45,9 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
-  # services.xserver.displayManager.gdm.enable = true;
-  # services.xserver.desktopManager.gnome.enable = true;
+  # Enable the GNOME Desktop Environment.
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -90,7 +88,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       firefox
-      kate
+    #  thunderbird
     ];
   };
 
@@ -116,10 +114,15 @@
     btop
     tmux
   ];
-
+  
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
-
+  
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+  
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -146,12 +149,6 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
-
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
 
 }
