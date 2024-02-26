@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./system/gnome.nix
+      ./system/hyprland.nix
     ];
 
   # Bootloader.
@@ -95,21 +96,12 @@
     git
     gcc
 
-    kitty
-    dunst
-    waybar
-    
     btop
     tmux
   ];
   
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
-  
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
   
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
