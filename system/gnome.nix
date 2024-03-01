@@ -9,10 +9,10 @@
   environment.gnome.excludePackages = (with pkgs; [
     gnome-photos
     gnome-tour
+    gedit # text editor
   ]) ++ (with pkgs.gnome; [
     cheese # webcam tool
     gnome-music
-    gedit # text editor
     epiphany # web browser
     geary # email reader
     gnome-characters
@@ -36,8 +36,8 @@
   services.xserver.excludePackages = [ pkgs.xterm ];
 
   # Configure keymap in X11
-  services.xserver = {
+  services.xserver.xkb = {
     layout = "ch";
-    xkbVariant = "fr";
+    variant = "fr";
   };
 }
