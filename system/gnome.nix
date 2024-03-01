@@ -28,6 +28,7 @@
   environment.systemPackages = with pkgs.gnomeExtensions; [
     blur-my-shell
     gsconnect
+    gtile
   ];
 
   # Enable the X11 windowing system.
