@@ -18,7 +18,7 @@
   imports = [
     ./home/hypr.nix
     ./home/nvim.nix
-    ./home/gnome.nix
+    ./home/dconf.nix
   ];
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -51,7 +51,7 @@
       theme = "robbyrussell";
     };
     syntaxHighlighting.enable = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     enableCompletion = true;
   };
 

@@ -31,6 +31,7 @@
   environment.systemPackages = with pkgs.gnomeExtensions; [
     blur-my-shell
     gsconnect
-    gtile
+    forge
+    appindicator
   ];
 }
