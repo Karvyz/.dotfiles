@@ -79,7 +79,7 @@
   users.users.karviz = {
     isNormalUser = true;
     description = "Karviz";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
   };
 
   home-manager = {
@@ -97,6 +97,9 @@
   environment.systemPackages = with pkgs; [
     firefox
   ];
+  
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true; 
   
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
