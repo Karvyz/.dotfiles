@@ -6,7 +6,11 @@
     
     shellAliases = {
       ll = "ls -al";
-      rebuild = "sudo nixos-rebuild switch --flake ~/.dotfiles";
+
+      sys-edit = "nvim ~/.dotfiles";
+      sys-update = "sudo nix flake update ~/.dotfiles";
+      sys-rebuild = "sudo nixos-rebuild switch --flake ~/.dotfiles";
+      sys-clean = "sudo nix-collect-garbage --delete-older-than 15d";
     };
     
     oh-my-zsh = {
