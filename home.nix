@@ -16,6 +16,7 @@
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
   imports = [
+    ./home/zsh.nix
     ./home/hypr.nix
     ./home/nvim.nix
     ./home/dconf.nix
@@ -38,23 +39,6 @@
     userName = "Henri Gros";
     userEmail = "henrigros1@gmail.com";
   };
-
-  programs.zsh = {
-    enable = true;
-    shellAliases = {
-      ll = "ls -al";
-      update = "sudo nixos-rebuild switch";
-    };
-    oh-my-zsh = {
-      enable = true;
-      plugins = [ "git" ];
-      theme = "robbyrussell";
-    };
-    syntaxHighlighting.enable = true;
-    autosuggestion.enable = true;
-    enableCompletion = true;
-  };
-
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

@@ -9,6 +9,8 @@
     [ # Include the results of the hardware scan.
       ./system/hardware-configuration.nix
       inputs.home-manager.nixosModules.default
+      
+      ./system/shell.nix
 
       ./system/gnome.nix
       # ./system/kde.nix
@@ -78,10 +80,6 @@
     isNormalUser = true;
     description = "Karviz";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      firefox
-    #  thunderbird
-    ];
   };
 
   home-manager = {
@@ -97,21 +95,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    neovim
-    unzip
-    wl-clipboard
-    ripgrep
-    
-    wget
-    git
-    gcc
-
-    btop
-    tmux
+    firefox
   ];
-  
-  programs.zsh.enable = true;
-  users.defaultUserShell = pkgs.zsh;
   
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
