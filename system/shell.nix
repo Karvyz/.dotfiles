@@ -1,23 +1,29 @@
-{ config, pkgs, ... }:
+{ lib, config, pkgs, ... }:
 
 {
-  programs.zsh.enable = true;
-  users.defaultUserShell = pkgs.zsh;
+  options = {
+    zsh.enable = lib.mkEnableOption "Enable Zsh module";
+  };
 
-  environment.systemPackages = with pkgs; [
-    neovim
-    unzip
-    wl-clipboard
-    ripgrep
-    
-    wget
-    git
-    gcc
+  config = lib.mkIf config.zsh.enable {
+    programs.zsh.enable = true;
+    users.defaultUserShell = pkgs.zsh;
 
-    btop
-    tmux
-    fzf
-    atuin
-    tldr
-  ];
+    environment.systemPackages = with pkgs; [
+      neovim
+      unzip
+      wl-clipboard
+      ripgrep
+
+      wget
+      git
+      gcc
+
+      btop
+      tmux
+      fzf
+      atuin
+      tldr
+    ];
+  };
 }

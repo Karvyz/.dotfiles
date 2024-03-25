@@ -1,17 +1,21 @@
-
-{ config, pkgs, ... }:
+{ lib, config, pkgs, ... }:
 
 {
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-    # package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+  options = {
+    hyprland.enable = lib.mkEnableOption "Enable hyprland module";
   };
-  
-   environment.systemPackages = with pkgs; [
-    kitty
-    dunst
-    # waybar
-    wofi
-  ];
+
+  config = lib.mkIf config.hyprland.enable {
+    programs.hyprland = {
+      enable = true;
+      xwayland.enable = true;
+    };
+
+    environment.systemPackages = with pkgs; [
+      kitty
+      dunst
+      # waybar
+      wofi
+    ];
+  };
 }

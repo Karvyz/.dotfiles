@@ -10,11 +10,7 @@
       ./system/hardware-configuration.nix
       inputs.home-manager.nixosModules.default
       
-      ./system/shell.nix
-
-      ./system/gnome.nix
-      # ./system/kde.nix
-      ./system/hyprland.nix
+      ./system
     ];
 
   # Bootloader.
@@ -82,6 +78,8 @@
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
   };
 
+  gnome.enable = true;
+  zsh.enable = true;
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = {

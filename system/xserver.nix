@@ -1,13 +1,19 @@
-{ config, pkgs, ... }:
+{ lib, config, pkgs, ... }:
 
 {
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  services.xserver.excludePackages = [ pkgs.xterm ];
+  options = {
+    xserver.enable = lib.mkEnableOption "Enable xserver module";
+  };
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "ch";
-    variant = "fr";
+  config = lib.mkIf config.xserver.enable {
+    # Enable the X11 windowing system.
+    services.xserver.enable = true;
+    services.xserver.excludePackages = [ pkgs.xterm ];
+
+    # Configure keymap in X11
+    services.xserver.xkb = {
+      layout = "ch";
+      variant = "fr";
+    };
   };
 }
