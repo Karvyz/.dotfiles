@@ -7,10 +7,8 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./system/hardware-configuration.nix
+      ./modules
       inputs.home-manager.nixosModules.default
-      
-      ./system
     ];
 
   # Bootloader.
@@ -83,7 +81,7 @@
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = {
-      "karviz" = import ./home.nix;
+      "karviz" = import ./modules/home;
     };
   };
 
