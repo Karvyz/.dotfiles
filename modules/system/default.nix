@@ -6,5 +6,6 @@
     ./xserver.nix
     ./hyprland.nix
     ./shell.nix
+    ./virtualization.nix
   ];
 }
