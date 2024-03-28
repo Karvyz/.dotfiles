@@ -54,9 +54,6 @@
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
   };
 
-  # Obviously
-  zsh.enable = true;
-
   # Home manager
   home-manager = {
     extraSpecialArgs = { inherit inputs; };

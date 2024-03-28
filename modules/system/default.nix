@@ -5,7 +5,8 @@
     ./gnome.nix
     ./xserver.nix
     ./hyprland.nix
-    ./shell.nix
+    ./zsh.nix
     ./virtualization.nix
+    ./essentials.nix
   ];
 }
