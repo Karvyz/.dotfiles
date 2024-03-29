@@ -8,5 +8,6 @@
     ./zsh.nix
     ./virtualization.nix
     ./essentials.nix
+    ./desktop.nix
   ];
 }

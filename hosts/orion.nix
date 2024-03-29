@@ -11,6 +11,7 @@
 
   # Desktop
   gnome.enable = true;
+  desktop.enable = true;
 
   # Enables VMs
   virtualization.enable = true;
