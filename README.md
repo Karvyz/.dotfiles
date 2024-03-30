@@ -6,6 +6,6 @@ All my configurations files
 Run this command
 
 ```bash
-  nix-shell -p git --command "nix run --experimental-features 'nix-command flakes' github:Karvyz/.dotfiles"
+curl -sSL https://raw.githubusercontent.com/Karvyz/.dotfiles/main/install.sh | bash
 ```
     
