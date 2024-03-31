@@ -6,6 +6,6 @@ All my configurations files
 Run this command
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/Karvyz/.dotfiles/main/install.sh | bash
+curl -O https://raw.githubusercontent.com/Karvyz/.dotfiles/main/install.sh && bash install.sh && rm install.sh
 ```
     

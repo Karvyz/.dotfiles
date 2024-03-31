@@ -11,10 +11,19 @@
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
+    
     nixosConfigurations.orion = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
         ./hosts/orion.nix
+        inputs.home-manager.nixosModules.default
+      ];
+    };
+    
+    nixosConfigurations.polaris = nixpkgs.lib.nixosSystem {
+      specialArgs = {inherit inputs;};
+      modules = [
+        ./hosts/polaris.nix
         inputs.home-manager.nixosModules.default
       ];
     };

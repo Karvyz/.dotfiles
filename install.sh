@@ -17,11 +17,11 @@ read -p "Enter your choice (1 or 2): " choice
 case $choice in
     1)
         echo "You chose orion."
-	sudo nixos-rebuild switch --flake ~/.dotfiles#orion
+	nix-shell -p git --command "sudo nixos-rebuild switch --flake ~/.dotfiles#orion"
         ;;
     2)
         echo "You chose polaris."
-	sudo nixos-rebuild switch --flake ~/.dotfiles#polaris
+	nix-shell -p git --command "sudo nixos-rebuild switch --flake ~/.dotfiles#polaris"
         ;;
     *)
         echo "Invalid choice. Please enter 1 or 2."
