@@ -10,6 +10,9 @@
     environment.systemPackages = with pkgs; [
       discord
 
+      libreoffice
+      gimp
+
       protonvpn-gui
       qbittorrent
     ];
