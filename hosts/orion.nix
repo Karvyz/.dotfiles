@@ -12,6 +12,7 @@
   # Desktop
   gnome.enable = true;
   desktop.enable = true;
+  devtools.enable = true;
 
   # Enables VMs
   virtualization.enable = true;

@@ -9,5 +9,6 @@
     ./virtualization.nix
     ./essentials.nix
     ./desktop.nix
+    ./devtools.nix
   ];
 }
