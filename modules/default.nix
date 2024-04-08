@@ -53,7 +53,7 @@
     isNormalUser = true;
     description = "Karviz";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" "dialout" ];
   };
 
   # Home manager

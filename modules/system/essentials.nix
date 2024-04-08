@@ -21,6 +21,7 @@
       
       # C compiler
       gcc
+      clang
 
       # Command-line utilities
       wget
