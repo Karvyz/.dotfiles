@@ -12,9 +12,14 @@
     };
 
     environment.systemPackages = with pkgs; [
-      kitty
+      hyprlock
+      pyprland
+      pavucontrol
+      brightnessctl
+
+      kitty 
       dunst
-      # waybar
+      waybar
       wofi
     ];
   };
