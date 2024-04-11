@@ -1,9 +1,9 @@
 { config, pkgs, ... }:
 
 {
-  home.file.nvim = {
+  programs.nixvim = {
     enable = true;
-    source = ./nvim;
-    target = ".config/nvim";
+    colorschemes.gruvbox.enable = true;
+    plugins.lualine.enable = true;
   };
 }
