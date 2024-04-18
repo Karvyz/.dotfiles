@@ -2,7 +2,6 @@
 
 {
   imports = [
-    inputs.home-manager.nixosModules.default
     ./system
     ./hardware-configuration.nix
   ];
@@ -54,14 +53,6 @@
     description = "Karviz";
     shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" "libvirtd" "dialout" ];
-  };
-
-  # Home manager
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      "karviz" = import ./home;
-    };
   };
 
   # Allow unfree packages
