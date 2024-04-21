@@ -17,8 +17,6 @@
     autosuggestion.enable = true;
     enableCompletion = true;
 
-    initExtra = ''if [ "$TMUX" = "" ]; then tmux a; fi'';
-
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" ];
@@ -26,4 +24,11 @@
     };
 
   };
+
+  home.packages = with pkgs; [
+    btop
+    tmux
+    fzf
+    tldr
+  ];
 }

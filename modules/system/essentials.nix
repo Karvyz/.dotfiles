@@ -21,16 +21,12 @@
       
       # C compiler
       gcc
+      clang
 
       # Command-line utilities
       wget
       git
-      btop
-      tmux
-      fzf
-      atuin
-      tldr
-
+     
       # Browser
       firefox
     ];
