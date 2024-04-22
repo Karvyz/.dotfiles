@@ -6,8 +6,8 @@
   };
 
   config = lib.mkIf config.hyprland.enable {
-    xserver.enable = true;
-    services.xserver.displayManager.sddm.wayland.enable = true;
+    # xserver.enable = true;
+    # services.xserver.displayManager.sddm.wayland.enable = true;
     programs.hyprland = {
       enable = true;
       xwayland.enable = true;

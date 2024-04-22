@@ -11,6 +11,7 @@
 
   # Desktop
   gnome.enable = true;
+  hyprland.enable = true;
   desktop.enable = true;
   devtools.enable = true;
 
