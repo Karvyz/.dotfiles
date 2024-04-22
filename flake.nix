@@ -15,22 +15,22 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+    nixosConfigurations = {
+      orion = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [ ./hosts/orion.nix ];
+      };
     
-    nixosConfigurations.orion = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./hosts/orion.nix
-        inputs.home-manager.nixosModules.default
-      ];
+      polaris = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [ ./hosts/polaris.nix ];
+      };
     };
     
-    nixosConfigurations.polaris = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./hosts/polaris.nix
-        inputs.home-manager.nixosModules.default
-      ];
+    homeConfigurations.karviz = home-manager.lib.homeManagerConfiguration {
+      pkgs = import nixpkgs { system = "x86_64-linux"; };
+      modules = [ ./modules/home ];
     };
   };
 }

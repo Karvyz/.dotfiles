@@ -6,11 +6,6 @@
 
     shellAliases = {
       ll = "ls -al";
-
-      sys-edit = "nvim ~/.dotfiles";
-      sys-update = "sudo nix flake update ~/.dotfiles";
-      sys-rebuild = "sudo nixos-rebuild switch --flake ~/.dotfiles";
-      sys-clean = "sudo nix-collect-garbage --delete-older-than 15d";
     };
 
     syntaxHighlighting.enable = true;
@@ -23,5 +18,17 @@
       theme = "robbyrussell";
     };
 
+  };
+
+  home.packages = with pkgs; [
+    btop
+    tmux
+    fzf
+    tldr
+    nh
+  ];
+
+  home.sessionVariables = {
+    FLAKE = ".dotfiles";
   };
 }
