@@ -17,34 +17,38 @@
     extraPackages = with pkgs; [
       xclip
       wl-clipboard
-	  ripgrep
+	  	ripgrep
     ];
 
     plugins = with pkgs.vimPlugins; [
-      gruvbox-nvim
+      vscode-nvim
 
-	  nvim-treesitter.withAllGrammars  
+			nvim-treesitter.withAllGrammars
 
-      lualine-nvim
-      nvim-web-devicons
+			noice-nvim
+			nui-nvim
+			nvim-notify
 
-	  gitsigns-nvim
+			lualine-nvim
+			nvim-web-devicons
+
+			gitsigns-nvim
 
 
-	  neogit
-	  plenary-nvim
-	  diffview-nvim
+			neogit
+			plenary-nvim
+			diffview-nvim
 
-	  oil-nvim
+			oil-nvim
 
-	  autoclose-nvim
+			autoclose-nvim
 
       comment-nvim
 
       telescope-nvim
       telescope-fzf-native-nvim
 
-	  lsp-zero-nvim
+			lsp-zero-nvim
   	  nvim-lspconfig
       cmp-nvim-lsp
       nvim-cmp 
