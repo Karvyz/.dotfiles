@@ -4,6 +4,8 @@
     rust-analyzer
     lua-language-server
     nixd
+		pyright
+		clang-tools
   ];
 
   programs.neovim = 
