@@ -30,7 +30,7 @@
     
     homeConfigurations.karviz = home-manager.lib.homeManagerConfiguration {
       pkgs = import nixpkgs { system = "x86_64-linux"; };
-      modules = [ ./modules/home ];
+      modules = [ ./modules/home inputs.nixvim.homeManagerModules.nixvim];
     };
   };
 }

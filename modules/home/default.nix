@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -16,13 +16,13 @@
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
   imports = [ 
-    inputs.nixvim.homeManagerModules.nixvim
     ./zsh.nix
     ./hypr.nix
-    ./nvim.nix
+    ./nvim
     ./dconf.nix
     ./tmux.nix
   ];
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
