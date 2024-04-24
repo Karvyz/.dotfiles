@@ -2,6 +2,7 @@
 
 {
   imports = [
+		./nvidia.nix
     ./gnome.nix
     ./xserver.nix
     ./hyprland.nix
