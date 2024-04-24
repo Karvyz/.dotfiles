@@ -18,7 +18,7 @@
   imports = [
     ./zsh.nix
     ./hyprland
-    ./nvim.nix
+    ./neovim
     ./dconf.nix
     ./tmux.nix
   ];
