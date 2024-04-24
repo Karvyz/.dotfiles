@@ -29,6 +29,6 @@
   ];
 
   home.sessionVariables = {
-    FLAKE = ".dotfiles";
+    FLAKE = "/home/karviz/.dotfiles";
   };
 }
