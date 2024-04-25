@@ -19,6 +19,7 @@
 		./colorscheme.nix
     ./zsh.nix
     ./hyprland
+		./waybar.nix
     ./neovim
     ./dconf.nix
     ./tmux.nix
