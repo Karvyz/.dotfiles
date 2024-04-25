@@ -18,6 +18,7 @@
       pyprland
       pavucontrol
       brightnessctl
+			networkmanagerapplet
 
       kitty 
       dunst

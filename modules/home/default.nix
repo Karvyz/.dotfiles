@@ -20,6 +20,7 @@
     ./zsh.nix
     ./hyprland
 		./waybar.nix
+		./rofi.nix
     ./neovim
     ./dconf.nix
     ./tmux.nix

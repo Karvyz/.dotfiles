@@ -10,8 +10,8 @@ in {
       position = "top";
 
       modules-center = [ "hyprland/workspaces" ] ;
-      modules-left = [ "custom/startmenu" "hyprland/window" "pulseaudio" "cpu" "memory"];
-      modules-right = [ "custom/hyprbindings" "custom/exit" "idle_inhibitor" "custom/themeselector" "custom/notification" "battery" "clock" "tray" ];
+      modules-left = [ "hyprland/window" "pulseaudio" "cpu" "memory"];
+      modules-right = [ "network" "battery" "clock" "tray" ];
 
       "hyprland/workspaces" = {
       	format = "{name}";
@@ -75,54 +75,6 @@ in {
         };
         on-click = "sleep 0.1 && pavucontrol";
       };
-      "custom/themeselector" = {
-        tooltip = false;
-        format = "";
-        on-click = "sleep 0.1 && theme-selector";
-      };
-      "custom/exit" = {
-        tooltip = false;
-        format = "";
-        on-click = "sleep 0.1 && wlogout";
-      };
-      "custom/startmenu" = {
-        tooltip = false;
-        format = " ";
-        # exec = "rofi -show drun";
-        on-click = "sleep 0.1 && rofi-launcher";
-      };
-      "custom/hyprbindings" = {
-        tooltip = false;
-        format = " Bindings";
-        on-click = "sleep 0.1 && list-hypr-bindings";
-      };
-      "idle_inhibitor" = {
-        format = "{icon}";
-        format-icons = {
-          activated = "";
-          deactivated = "";
-        };
-        tooltip = "true";
-      };
-      "custom/notification" = {
-        tooltip = false;
-        format = "{icon} {}";
-        format-icons = {
-          notification = "<span foreground='red'><sup></sup></span>";
-          none = "";
-          dnd-notification = "<span foreground='red'><sup></sup></span>";
-          dnd-none = "";
-          inhibited-notification = "<span foreground='red'><sup></sup></span>";
-          inhibited-none = "";
-          dnd-inhibited-notification = "<span foreground='red'><sup></sup></span>";
-          dnd-inhibited-none = "";
-       	};
-        return-type = "json";
-        exec-if = "which swaync-client";
-        exec = "swaync-client -swb";
-        on-click = "sleep 0.1 && task-waybar";
-        escape = true;
-      };
       "battery" = {
         states = {
           warning = 30;
@@ -142,11 +94,9 @@ in {
 				font-family: JetBrainsMono Nerd Font, Font Awesome, sans-serif;
     		font-weight: bold;
       }
-      window#waybar {
-				background-color: #${palette.base00};
-				border-bottom: 1px solid rgba(26,27,38,0);
+			window#waybar {
 				border-radius: 0px;
-				color: #${palette.base0F};
+				background: transparent;
       }
       #workspaces {
 				background: #${palette.base01};
@@ -269,13 +219,6 @@ in {
 				padding: 2px 10px;
 				border-radius: 10px;
       }
-      #custom-hyprbindings {
-				color: #${palette.base0E};
-				background: #${palette.base01};
-				margin: 4px;
-				padding: 2px 10px;
-				border-radius: 10px;
-      }
       #tray {
 				color: #${palette.base05};
 				background: #${palette.base01};
@@ -289,43 +232,6 @@ in {
 				margin: 4px;
 				padding: 2px 10px;
 				border-radius: 10px;
-      }
-      #custom-notification {
-				color: #${palette.base0C};
-				background: #${palette.base01};
-				margin: 4px;
-				padding: 2px 10px;
-				border-radius: 10px;
-      }
-      #custom-themeselector {
-				color: #${palette.base0D};
-				background: #${palette.base01};
-				margin: 4px 0px;
-				padding: 2px 10px 2px 5px;
-				border-radius: 0px 10px 10px 0px;
-      }
-      #custom-startmenu {
-				color: #${palette.base00};
-        background: linear-gradient(45deg, #${palette.base09}, #${palette.base03}, #${palette.base0C}, #${palette.base07});
-        background-size: 300% 300%;
-        animation: gradient_horizontal 15s ease infinite;
-				margin: 4px;
-				padding: 2px 10px;
-				border-radius: 10px;
-      }
-      #idle_inhibitor {
-				color: #${palette.base09};
-				background: #${palette.base01};
-				margin: 4px 0px;
-				padding: 2px 14px;
-				border-radius: 0px;
-      }
-      #custom-exit {
-				color: #${palette.base0E};
-				background: #${palette.base01};
-				border-radius: 10px 0px 0px 10px;
-				margin: 4px 0px;
-				padding: 2px 5px 2px 15px;
       } '';
   };
 }
