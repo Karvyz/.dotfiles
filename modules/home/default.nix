@@ -16,11 +16,13 @@
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
   imports = [
+		./colorscheme.nix
     ./zsh.nix
     ./hyprland
     ./neovim
     ./dconf.nix
     ./tmux.nix
+		./kitty.nix
   ];
   # The home.packages option allows you to install Nix packages into your
   # environment.

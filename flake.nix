@@ -8,9 +8,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+		nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nix-colors, ... }@inputs: {
     nixosConfigurations = {
       orion = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
@@ -25,6 +27,7 @@
     
     homeConfigurations.karviz = home-manager.lib.homeManagerConfiguration {
       pkgs = import nixpkgs { system = "x86_64-linux"; };
+			extraSpecialArgs = { inherit nix-colors; };
       modules = [ ./modules/home ];
     };
   };
