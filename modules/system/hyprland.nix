@@ -22,7 +22,7 @@
       kitty 
       dunst
       waybar
-      wofi
+      rofi-wayland
 
       gnome.nautilus
     ];

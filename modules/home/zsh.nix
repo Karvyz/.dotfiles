@@ -6,6 +6,8 @@
 
     shellAliases = {
       ll = "ls -al";
+
+			ns = "nix-shell";
     };
 
     syntaxHighlighting.enable = true;
