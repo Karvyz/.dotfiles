@@ -15,6 +15,7 @@
 
     environment.systemPackages = with pkgs; [
       hyprlock
+			swww
       pyprland
       pavucontrol
       brightnessctl

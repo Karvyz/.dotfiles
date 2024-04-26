@@ -1,0 +1,6 @@
+{ config, ... }:
+{
+	imports = [
+		./wallsetter.nix
+	];
+}
