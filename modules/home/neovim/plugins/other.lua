@@ -3,8 +3,6 @@ require("lualine").setup({
 	icons_enabled = true,
 })
 
--- Colorscheme
-vim.cmd.colorscheme "vscode"
 -- Comment
 require("Comment").setup()
 
