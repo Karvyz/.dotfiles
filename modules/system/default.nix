@@ -10,5 +10,6 @@
     ./essentials.nix
     ./desktop.nix
     ./devtools.nix
+		./ollama.nix
   ];
 }
