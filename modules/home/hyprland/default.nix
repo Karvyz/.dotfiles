@@ -3,11 +3,7 @@
 {
 	imports = [
 		./hyprland.nix
+		./hyprlock.nix
+		./pyprland.nix
 	];
-
-  home.file.hyprland = {
-    enable = true;
-    source = ./hypr;
-    target = ".config/hypr";
-  };
 }

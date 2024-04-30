@@ -79,26 +79,22 @@ in {
 
 			$mainMod = SUPER
 
+			bindr = SUPER, SUPER_L, exec, rofi -show drun
+
 			bind = $mainMod, A, exec, kitty
 			bind = $mainMod, C, killactive, 
 			bind = $mainMod, M, exit, 
-			bind = $mainMod, E, exec, dolphin
+			bind = $mainMod, E, exec, nautilus
 			bind = $mainMod, F, togglefloating, 
-			bind = $mainMod, R, exec, rofi -show drun
 			bind = $mainMod, P, pseudo, # dwindle
 			bind = $mainMod, J, togglesplit, # dwindle
 			bind = $mainMod, U, exec, pkill waybar
 			bind = $mainMod, I, exec, waybar
 			bind = $mainMod, N, exec, hyprlock
 			bind = $mainMod, W, exec, wp-switch
-			bind = $mainMod SHIFT, Z, exec, pypr zoom
-			bind = $mainMod ALT, P, exec, pypr toggle_dpms
-			bind = $mainMod SHIFT, O, exec, pypr shift_monitors +1
 			bind = $mainMod, B, exec, pypr expose
 			bind = $mainMod, I, exec, pypr change_workspace +1
 			bind = $mainMod, U, exec, pypr change_workspace -1
-			bind = $mainMod, L, exec, pypr toggle_dpms
-			bind = $mainMod SHIFT, M, exec, pypr toggle stb stb-logs
 			bind = $mainMod, Q, exec, pypr toggle term
 			bind = $mainMod, V, exec, pypr toggle volume
 
