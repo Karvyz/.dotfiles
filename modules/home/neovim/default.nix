@@ -9,6 +9,7 @@ in
     nixd
 		pyright
 		clang-tools
+		zls
   ];
 
   programs.neovim = 
@@ -58,6 +59,8 @@ in
       cmp-nvim-lsp
       nvim-cmp 
       luasnip
+
+			copilot-vim
 	];
 
     extraLuaConfig = ''

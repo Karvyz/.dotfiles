@@ -33,11 +33,10 @@ cmp.setup({
 			require('luasnip').lsp_expand(args.body)
 		end,
 	},
-	--- (Optional) Show source name in completion menu
 	formatting = cmp_format,
 	preselect = 'item',
 	completion = {
-		completopt = 'menu,menuone,noinsert'
+		completeopt = 'menu,menuone,noinsert'
 	},
 })
 
@@ -46,3 +45,4 @@ require 'lspconfig'.rust_analyzer.setup {}
 require 'lspconfig'.nixd.setup {}
 require 'lspconfig'.pyright.setup {}
 require 'lspconfig'.clangd.setup {}
+require 'lspconfig'.zls.setup {}
