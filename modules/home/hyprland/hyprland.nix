@@ -129,7 +129,7 @@ in {
 			bind = $mainMod, mouse_up, workspace, e-1
 
 			bindm = $mainMod, mouse:272, movewindow
-			bindm = $mainMod, mouse:273, resizewindow
+			bindm = $mainMod SHIFT, mouse:272, resizewindow
 
 			bind = , XF86MonBrightnessUp, exec, brightnessctl s +5%
 			bind = , XF86MonBrightnessDown, exec, brightnessctl s 5%-
