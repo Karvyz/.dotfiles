@@ -24,7 +24,6 @@
 
   home.packages = with pkgs; [
     btop
-    tmux
     fzf
     tldr
     nh
