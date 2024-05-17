@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {  
   programs.zsh = {
@@ -7,7 +7,7 @@
     shellAliases = {
       ll = "ls -al";
 
-			ns = "nix-shell";
+			ns = "nix-shell --command zsh";
     };
 
     syntaxHighlighting.enable = true;
