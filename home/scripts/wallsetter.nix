@@ -7,7 +7,7 @@
     '')
     (pkgs.writeShellScriptBin "wp-switch" ''
 			# Set the directory path
-			directory="/home/karviz/.dotfiles/modules/home/wallpapers"
+			directory="/home/karviz/.dotfiles/home/wallpapers"
 
 			# Check if the directory exists
 			if [ ! -d "$directory" ]; then
