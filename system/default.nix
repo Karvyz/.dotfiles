@@ -2,8 +2,15 @@
 
 {
   imports = [
-    ./system
-    ./hardware-configuration.nix
+		./nvidia.nix
+    ./gnome.nix
+    ./xserver.nix
+    ./hyprland.nix
+    ./virtualization.nix
+    ./essentials.nix
+    ./desktop.nix
+    ./devtools.nix
+		./ollama.nix
   ];
 
   # Enable networking

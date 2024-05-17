@@ -3,7 +3,7 @@
 {
   networking.hostName = "orion"; # Work config
 
-  imports = [ ./../modules ];
+  imports = [ ./hardware-configuration.nix ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
