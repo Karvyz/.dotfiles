@@ -8,6 +8,7 @@
       ll = "ls -al";
 
 			ns = "nix-shell --command zsh";
+			nld = "LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH zsh";
     };
 
     syntaxHighlighting.enable = true;

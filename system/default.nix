@@ -11,6 +11,7 @@
     ./desktop.nix
     ./devtools.nix
 		./ollama.nix
+		./ld.nix
   ];
 
   # Enable networking
