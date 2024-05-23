@@ -71,6 +71,7 @@ misc {
 exec-once = waybar
 exec-once = pypr
 exec-once = wp-init 
+exec-once = nm-applet
 
 
 $mainMod = SUPER
