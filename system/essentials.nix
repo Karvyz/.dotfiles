@@ -1,34 +1,26 @@
-{ lib, config, pkgs, ... } :
+{ pkgs, ... } :
 
 {
-  options = {
-    essentials.enable = lib.mkOption {
-      default = true;
-      example = true;
-      description = "Whether to enable essentials packages.";
-      type = lib.types.bool;
-    };
-  };
+	# Allow unfree packages
+	nixpkgs.config.allowUnfree = true;
 
-  config = lib.mkIf config.essentials.enable {
-    environment.systemPackages = with pkgs; [
-      # Neovim
-      neovim
-      unzip
-      wl-clipboard
-      ripgrep
-      nixd
-      
-      # C compiler
-      gcc
-      clang
+	environment.systemPackages = with pkgs; [
+		# Neovim
+		neovim
+		unzip
+		wl-clipboard
+		ripgrep
+		nixd
+		
+		# C compiler
+		gcc
+		clang
 
-      # Command-line utilities
-      wget
-      git
-     
-      # Browser
-      firefox
-    ];
-  };
+		# Command-line utilities
+		wget
+		git
+	 
+		# Browser
+		firefox
+	];
 }

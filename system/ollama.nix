@@ -1,4 +1,5 @@
-{ lib, config, pkgs, ... }:
+{ lib, config, ... }:
+
 let
 	acc = if config.nvidia.enable then "cuda" else null;
 in {
