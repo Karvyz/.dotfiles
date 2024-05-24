@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  palette = config.stylix.base16Scheme;
+  palette = config.lib.stylix.colors;
 in {
   home.file.".config/rofi/config.rasi".text = ''
 @theme "/dev/null"

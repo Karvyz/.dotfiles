@@ -1,6 +1,6 @@
 { config, ... }:
 let
-	palette = config.stylix.base16Scheme;
+	palette = config.lib.stylix.colors;
 in {
   home.file.".config/hypr/hyprland.conf".text = ''
 monitor=,1920x1200@120,auto,1

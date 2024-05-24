@@ -1,6 +1,6 @@
-{ config, lib, ... }:
+{ config, ... }:
 let
-	palette = config.stylix.base16Scheme;
+	palette = config.lib.stylix.colors;
   betterTransition = "all 0.3s cubic-bezier(.55,-0.68,.48,1.682)";
 in {
 	programs.waybar = {

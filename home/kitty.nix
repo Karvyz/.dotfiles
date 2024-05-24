@@ -1,6 +1,6 @@
 { config, ... }:
 let
-	palette = config.stylix.base16Scheme;
+	palette = config.lib.stylix.colors;
 in {
   home.file.".config/kitty/kitty.conf".text = ''
 font_family JetBrainsMono Nerd Font
