@@ -1,8 +1,5 @@
-{ pkgs, config, nix-colors, ...}:
+{ pkgs, ...}:
 {
-	imports = [
-    nix-colors.homeManagerModules.default
-  ];
-
-	colorScheme = nix-colors.colorSchemes.ashes;
+	stylix.image = ./wallpapers/hypr0.png;
+	stylix.polarity = "dark";
 }

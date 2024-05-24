@@ -9,10 +9,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-		nix-colors.url = "github:misterio77/nix-colors";
+		stylix.url = "github:danth/stylix";
   };
 
-  outputs = { nixpkgs, home-manager, nix-colors, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, stylix, ... }@inputs: {
     nixosConfigurations = {
       orion = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
@@ -33,8 +33,11 @@
     
     homeConfigurations.karviz = home-manager.lib.homeManagerConfiguration {
       pkgs = import nixpkgs { system = "x86_64-linux"; };
-			extraSpecialArgs = { inherit nix-colors; };
-      modules = [ ./home ];
+			extraSpecialArgs = { inherit inputs; };
+      modules = [
+				./home
+				stylix.homeManagerModules.stylix
+			];
     };
   };
 }

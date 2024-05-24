@@ -1,7 +1,5 @@
-{ config, ... }:
-let
-  palette = config.colorScheme.palette;
-in {
+{ ... }:
+{
   home.file.".config/hypr/hyprlock.conf".text = ''
 background {
 	monitor =

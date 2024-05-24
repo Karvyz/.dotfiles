@@ -4,35 +4,15 @@ with lib.hm.gvariant;
 
 {
   dconf.settings = {
-    "org/gnome/desktop/background" = {
-      color-shading-type = "solid";
-      picture-options = "zoom";
-      picture-uri = "file:///home/karviz/.dotfiles/modules/home/wallpapers/BH.png";
-      picture-uri-dark = "file:///home/karviz/.dotfiles/modules/home/wallpapers/BH.png";
-      primary-color = "#000000000000";
-      secondary-color = "#000000000000";
-    };
-
     "org/gnome/desktop/input-sources" = {
       sources = [ (mkTuple [ "xkb" "ch+fr" ]) ];
       xkb-options = [ "terminate:ctrl_alt_bksp" ];
     };
 
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-    };
 
     "org/gnome/desktop/peripherals/touchpad" = {
       tap-to-click = true;
       two-finger-scrolling-enabled = true;
-    };
-
-    "org/gnome/desktop/screensaver" = {
-      color-shading-type = "solid";
-      picture-options = "zoom";
-      picture-uri = "file:///home/karviz/.dotfiles/home/modules/wallpapers/BH.png";
-      primary-color = "#000000000000";
-      secondary-color = "#000000000000";
     };
 
     "org/gnome/desktop/wm/keybindings" = {
