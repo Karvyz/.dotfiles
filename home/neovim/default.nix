@@ -3,17 +3,19 @@ let
 	palette = config.lib.stylix.colors;
 in 
 {
-    home.packages = with pkgs; [
-    rust-analyzer
-    lua-language-server
-    nixd
+	home.packages = with pkgs; [
+		rust-analyzer
+		lua-language-server
+		nixd
 		pyright
 		clang-tools
 		zls
-  ];
+		texlab
 
-  programs.neovim = 
-  {
+		texliveMedium
+	];
+
+  programs.neovim = {
     enable = true;
 
     viAlias = true;
@@ -53,6 +55,8 @@ in
 
       telescope-nvim
       telescope-fzf-native-nvim
+
+			vimtex
 
 			lsp-zero-nvim
   	  nvim-lspconfig
