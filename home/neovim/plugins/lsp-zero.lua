@@ -40,8 +40,15 @@ cmp.setup({
 	},
 })
 
+
+vim.lsp.inlay_hint.enable(true)
+vim.g.rustaceanvim = {
+	server = {
+		capabilities = lsp_zero.get_capabilities()
+	},
+}
+
 require 'lspconfig'.lua_ls.setup {}
-require 'lspconfig'.rust_analyzer.setup {}
 require 'lspconfig'.nixd.setup {}
 require 'lspconfig'.pyright.setup {}
 require 'lspconfig'.clangd.setup {}

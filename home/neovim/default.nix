@@ -63,6 +63,7 @@ in
       cmp-nvim-lsp
       nvim-cmp 
       luasnip
+			rustaceanvim
 
 			copilot-vim
 	];
