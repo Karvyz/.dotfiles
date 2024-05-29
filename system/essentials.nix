@@ -4,6 +4,8 @@
 	# Allow unfree packages
 	nixpkgs.config.allowUnfree = true;
 
+	boot.kernelPackages = pkgs.linuxPackages_latest;	
+
 	environment.systemPackages = with pkgs; [
 		# Neovim
 		neovim
