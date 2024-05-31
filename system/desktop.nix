@@ -11,6 +11,7 @@
 
       libreoffice
       gimp
+			texliveFull
 
       protonvpn-gui
       qbittorrent

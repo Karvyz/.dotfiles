@@ -11,8 +11,6 @@ in
 		clang-tools
 		zls
 		texlab
-
-		texliveMedium
 	];
 
   programs.neovim = {
