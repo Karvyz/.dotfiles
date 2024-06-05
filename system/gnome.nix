@@ -29,12 +29,5 @@
       gnome-contacts
       gnome-initial-setup
     ]);
-
-    environment.systemPackages = with pkgs.gnomeExtensions; [
-      blur-my-shell
-      gsconnect
-      forge
-      appindicator
-    ];
   };
 }

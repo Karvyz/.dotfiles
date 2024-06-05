@@ -23,7 +23,7 @@
 		./waybar.nix
 		./rofi.nix
     ./neovim
-    ./dconf.nix
+    ./gnome.nix
     ./tmux.nix
 		./kitty.nix
   ];

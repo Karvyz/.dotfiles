@@ -1,11 +1,15 @@
-{ lib, ... }:
+{ pkgs, lib, ... }:
+{	
+	home.packages = with pkgs.gnomeExtensions; [
+      blur-my-shell
+      gsconnect
+      forge
+      appindicator
+  ];
 
-with lib.hm.gvariant;
-
-{
   dconf.settings = {
     "org/gnome/desktop/input-sources" = {
-      sources = [ (mkTuple [ "xkb" "ch+fr" ]) ];
+      sources = [ (lib.hm.gvariant.mkTuple [ "xkb" "ch+fr" ]) ];
       xkb-options = [ "terminate:ctrl_alt_bksp" ];
     };
 
