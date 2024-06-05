@@ -1,5 +1,3 @@
-{ config, pkgs, inputs, ... }:
-
 {
   networking.hostName = "orion"; # Work config
 
@@ -16,8 +14,10 @@
   gnome.enable = true;
   hyprland.enable = true;
   desktop.enable = true;
-  devtools.enable = true;
 	ollama.enable = false;
+
+	# Dev
+	devenvs.enable = true;
 
   # Enables VMs
   virtualization.enable = true;

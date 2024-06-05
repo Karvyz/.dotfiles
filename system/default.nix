@@ -1,7 +1,7 @@
 {
   imports = [
     ./desktop.nix
-    ./devtools.nix
+    ./devenvs
     ./essentials.nix
     ./gnome.nix
     ./hyprland.nix
