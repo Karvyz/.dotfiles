@@ -1,29 +1,37 @@
-{ pkgs, ... }:
+{ pkgs, lib, config, ... }:
 {
-	environment.systemPackages = with pkgs; [
-		rustup
+	options.devenv.rust.enable = lib.mkOption {
+		type = lib.types.bool;
+		default = config.devenvs.enable;
+		description = "Enable Rust development environment";
+	};
 
-		# essentials
-		pkg-config
-		alsa-lib
-		udev
-		lld
-		dbus
-		cmake
-		gnumake
-		clang
-		fontconfig
+	config = lib.mkIf config.devenv.rust.enable {
+		environment.systemPackages = with pkgs; [
+			rustup
 
-		# x11
-		xorg.libX11
-		xorg.libXinerama
-		xorg.libXft
-		xorg.libXcursor
-		xorg.libXi
-		xorg.libXrandr
+			# essentials
+			pkg-config
+			alsa-lib
+			udev
+			lld
+			dbus
+			cmake
+			gnumake
+			clang
+			fontconfig
 
-		#	wayland
-		libxkbcommon
-		wayland
-	];
+			# x11
+			xorg.libX11
+			xorg.libXinerama
+			xorg.libXft
+			xorg.libXcursor
+			xorg.libXi
+			xorg.libXrandr
+
+			#	wayland
+			libxkbcommon
+			wayland
+		];
+	};
 }
