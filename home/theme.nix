@@ -8,5 +8,7 @@
 			name = "Adwaita";
 			package = pkgs.gnome.adwaita-icon-theme;
 		};
+
+		targets.kde.enable = false;
   };
 }
