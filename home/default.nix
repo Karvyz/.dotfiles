@@ -17,7 +17,7 @@
 
   imports = [
 		./scripts
-		./colorscheme.nix
+		./theme.nix
     ./zsh.nix
     ./hyprland
 		./waybar.nix
