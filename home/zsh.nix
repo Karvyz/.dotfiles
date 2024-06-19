@@ -14,14 +14,11 @@
     syntaxHighlighting.enable = true;
     autosuggestion.enable = true;
     enableCompletion = true;
-
-    oh-my-zsh = {
-      enable = true;
-      plugins = [ "git" ];
-      theme = "robbyrussell";
-    };
-
   };
+
+	programs.starship = {
+		enable = true;
+	};
 
   home.packages = with pkgs; [
     btop
