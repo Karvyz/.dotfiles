@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -16,6 +16,7 @@
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
   imports = [
+		./ags.nix
 		./scripts
 		./theme.nix
     ./zsh.nix

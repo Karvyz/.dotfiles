@@ -68,11 +68,9 @@ misc {
 	force_default_wallpaper = 0
 }
 
-exec-once = waybar
+exec-once = ags
 exec-once = pypr
-exec-once = wp-init 
 exec-once = nm-applet
-
 
 $mainMod = SUPER
 
