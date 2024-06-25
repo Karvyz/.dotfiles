@@ -7,6 +7,7 @@
     shellAliases = {
       ll = "ls -al";
 
+			dv = "devenv init && vi devenv.nix && devenv shell";
 			ns = "nix-shell --command zsh";
 			nld = "LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH zsh";
     };
@@ -16,12 +17,18 @@
     enableCompletion = true;
   };
 
-	programs.starship = {
-		enable = true;
+	programs = {
+		starship.enable = true;
+		atuin.enable = true;
+		direnv.enable = true;
+		btop = {
+			enable = true;
+			settings.update_ms = 500;
+		};
 	};
 
   home.packages = with pkgs; [
-    btop
+		devenv
     fzf
     tldr
     nh
