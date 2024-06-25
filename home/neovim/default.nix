@@ -24,6 +24,7 @@ in
       xclip
       wl-clipboard
 	  	ripgrep
+			lldb
     ];
 
     plugins = with pkgs.vimPlugins; [
@@ -44,6 +45,10 @@ in
 			neogit
 			plenary-nvim
 			diffview-nvim
+
+			nvim-dap
+			nvim-nio
+			nvim-dap-ui
 
 			oil-nvim
 
@@ -70,6 +75,7 @@ in
       ${builtins.readFile ./options.lua}
       ${builtins.readFile ./plugins/lsp-zero.lua}
       ${builtins.readFile ./plugins/telescope.lua}
+      ${builtins.readFile ./plugins/dap.lua}
       ${builtins.readFile ./plugins/other.lua}
 
 			require('base16-colorscheme').setup({
