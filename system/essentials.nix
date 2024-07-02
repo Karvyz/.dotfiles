@@ -24,5 +24,7 @@
 	 
 		# Browser
 		firefox
+
+		spotify
 	];
 }
