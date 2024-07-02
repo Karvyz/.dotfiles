@@ -8,10 +8,10 @@
   config = lib.mkIf config.virtualization.enable {
     environment.systemPackages = with pkgs; [
       virtiofsd
+			gnome.gnome-boxes
     ];
   
     virtualisation.libvirtd.enable = true;
     virtualisation.spiceUSBRedirection.enable = true;
-    programs.virt-manager.enable = true; 
   };
 }
