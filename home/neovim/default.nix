@@ -3,16 +3,6 @@ let
 	palette = config.lib.stylix.colors;
 in 
 {
-	home.packages = with pkgs; [
-		rust-analyzer
-		lua-language-server
-		nixd
-		pyright
-		clang-tools
-		zls
-		texlab
-	];
-
   programs.neovim = {
     enable = true;
 

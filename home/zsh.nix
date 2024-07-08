@@ -20,7 +20,10 @@
 	programs = {
 		starship.enable = true;
 		atuin.enable = true;
-		direnv.enable = true;
+		direnv = {
+			enable = true;
+			nix-direnv.enable = true;
+		};
 		btop = {
 			enable = true;
 			settings.update_ms = 500;

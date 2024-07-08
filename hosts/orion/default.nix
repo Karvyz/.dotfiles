@@ -16,9 +16,6 @@
   desktop.enable = true;
 	ollama.enable = false;
 
-	# Dev
-	devenvs.enable = true;
-
   # Enables VMs
   virtualization.enable = true;
   
