@@ -56,10 +56,6 @@ dwindle {
 	preserve_split = yes
 }
 
-master {
-	new_is_master = true
-}
-
 gestures {
 	workspace_swipe = on 
 }
@@ -127,7 +123,11 @@ bindm = $mainMod SHIFT, mouse:272, resizewindow
 bind = , XF86MonBrightnessUp, exec, brightnessctl s +5%
 bind = , XF86MonBrightnessDown, exec, brightnessctl s 5%-
 
-bind = , xf86KbdBrightnessUp, exec, brightnessctl -d *::kbd_backlight set +33%
-bind = , xf86KbdBrightnessDown, exec, brightnessctl -d *::kbd_backlight set 33%-
+bindel = , xf86KbdBrightnessUp, exec, brightnessctl -d *::kbd_backlight set +33%
+bindel = , xf86KbdBrightnessDown, exec, brightnessctl -d *::kbd_backlight set 33%-
+
+bindel=, XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+bindel=, XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindl=, XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 	'';
 }
