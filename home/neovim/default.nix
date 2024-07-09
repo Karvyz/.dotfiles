@@ -3,6 +3,11 @@ let
 	palette = config.lib.stylix.colors;
 in 
 {
+	home.packages = [
+		pkgs.nixd 
+		pkgs.lua-language-server
+	];
+
   programs.neovim = {
     enable = true;
 
