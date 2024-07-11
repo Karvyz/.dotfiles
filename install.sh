@@ -1,32 +1,24 @@
-#!/bin/sh
+#!/bin/bash
 
-# Automated script to install my dotfiles
+# Nix
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 
-# Clone dotfiles
-nix-shell -p git --command "git clone https://github.com/Karvyz/.dotfiles ~/.dotfiles"
+# Git
+git clone https://github.com/Karvyz/.dotfiles.git && cd .dotfiles
+git remote rm origin
+git remote add origin git@github:Karvyz/.dotfiles.git
 
-# Generate hardware config for new system
-sudo nixos-generate-config --show-hardware-config > ~/.dotfiles/modules/hardware-configuration.nix
+# Cachix
+echo trusted-users = root karviz | sudo tee -a /etc/nix/nix.conf
+sudo systemctl restart nix-daemon
 
-echo "Please choose the host:"
-echo "1. orion"
-echo "2. polaris"
-read -p "Enter your choice (1 or 2): " choice
+# Home-manger
+nix run home-manager/master -- switch --flake .
 
-# Rebuild system using the user choice
-case $choice in
-    1)
-        echo "You chose orion."
-	nix-shell -p git --command "sudo nixos-rebuild switch --flake ~/.dotfiles#orion"
-        ;;
-    2)
-        echo "You chose polaris."
-	nix-shell -p git --command "sudo nixos-rebuild switch --flake ~/.dotfiles#polaris"
-        ;;
-    *)
-        echo "Invalid choice. Please enter 1 or 2."
-        ;;
-esac
+# Configuration
+echo /home/$USER/.nix-profile/bin/zsh | sudo tee -a /etc/shells
+chsh -s /home/$USER/.nix-profile/bin/zsh
 
-# Cleanup
-nix-collect-garbage -d
+# SSH
+ssh-keygen -t ed25519
