@@ -1,12 +1,5 @@
 { pkgs, lib, ... }:
 {	
-	home.packages = with pkgs.gnomeExtensions; [
-      blur-my-shell
-      gsconnect
-      forge
-      appindicator
-  ];
-
   dconf.settings = {
     "org/gnome/desktop/input-sources" = {
       sources = [ (lib.hm.gvariant.mkTuple [ "xkb" "ch+fr" ]) ];
@@ -40,7 +33,13 @@
     };
 
     "org/gnome/shell" = {
-      enabled-extensions = [ "blur-my-shell@aunetx" "launch-new-instance@gnome-shell-extensions.gcampax.github.com" "gsconnect@andyholmes.github.com" "forge@jmmaranan.com" "gsconnect@andyholmes.github.io" "appindicatorsupport@rgcjonas.gmail.com" ];
+			disable-user-extensions = false;
+      enabled-extensions = [ 
+				pkgs.gnomeExtensions.blur-my-shell.extensionUuid
+				pkgs.gnomeExtensions.gsconnect.extensionUuid
+				pkgs.gnomeExtensions.forge.extensionUuid
+				pkgs.gnomeExtensions.appindicator.extensionUuid
+			];
       favorite-apps = [ "firefox.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Console.desktop" ];
     };
 
