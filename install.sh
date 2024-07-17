@@ -6,8 +6,7 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 
 # Git
 git clone https://github.com/Karvyz/.dotfiles.git && cd .dotfiles
-git remote rm origin
-git remote add origin git@github:Karvyz/.dotfiles.git
+git remote set-url origin git@github.com:Karvyz/.dotfiles.git
 
 # Cachix
 echo trusted-users = root karviz | sudo tee -a /etc/nix/nix.conf
