@@ -1,8 +1,22 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 let
 	palette = config.lib.stylix.colors;
 in {
-  home.file.".config/hypr/hyprland.conf".text = ''
+
+	home.packages = with pkgs; [
+		rofi-wayland
+		kitty
+		pyprland
+
+		pavucontrol
+		brightnessctl
+		networkmanager
+		blueman
+	];
+
+	wayland.windowManager.hyprland = {
+		enable = true;
+		extraConfig = ''
 monitor=,1920x1200@120,auto,1
 
 env = XCURSOR_SIZE,24
@@ -130,4 +144,5 @@ bindel=, XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
 bindel=, XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
 bindl=, XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 	'';
+	};
 }
