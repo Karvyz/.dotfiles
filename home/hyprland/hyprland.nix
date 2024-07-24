@@ -4,7 +4,6 @@ let
 in {
 
 	home.packages = with pkgs; [
-		rofi-wayland
 		kitty
 		pyprland
 
@@ -84,12 +83,14 @@ exec-once = nm-applet
 
 $mainMod = SUPER
 
-bindr = SUPER, SUPER_L, exec, rofi -show drun
+bindr = SUPER, SUPER_L, exec,	ags -t hub 
 
+bind = $mainMod, B, exec, ags -t bar
 bind = $mainMod, A, exec, kitty
+bind = $mainMod, E, exec, nautilus
+
 bind = $mainMod, C, killactive, 
 bind = $mainMod, M, exit, 
-bind = $mainMod, E, exec, nautilus
 bind = $mainMod, F, togglefloating, 
 bind = $mainMod, G, fullscreen,
 bind = $mainMod, P, pseudo, # dwindle
