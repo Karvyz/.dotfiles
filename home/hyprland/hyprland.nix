@@ -4,9 +4,7 @@ let
 in {
 
 	home.packages = with pkgs; [
-		kitty
 		pyprland
-
 		pavucontrol
 		brightnessctl
 		networkmanager

@@ -5,6 +5,7 @@
     image = ./wallpapers/BH.png;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/ashes.yaml";
 		polarity = "dark";
+		opacity.terminal = 0.85;
 		cursor = {
 			name = "Adwaita";
 			package = pkgs.gnome.adwaita-icon-theme;
