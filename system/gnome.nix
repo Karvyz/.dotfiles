@@ -15,26 +15,26 @@
       gnome-photos
       gnome-tour
       gedit # text editor
-    ]) ++ (with pkgs.gnome; [
-      cheese # webcam tool
-      gnome-music
-      epiphany # web browser
+      yelp # Help view
       geary # email reader
+      cheese # webcam tool
+      epiphany # web browser
+    ]) ++ (with pkgs.gnome; [
+      gnome-music
       gnome-characters
       tali # poker game
       iagno # go game
       hitori # sudoku game
       atomix # puzzle game
-      yelp # Help view
       gnome-contacts
       gnome-initial-setup
     ]);
 
-		environment.systemPackages = with pkgs.gnomeExtensions; [
+    environment.systemPackages = with pkgs.gnomeExtensions; [
       blur-my-shell
       gsconnect
       forge
       appindicator
-  	];
+    ];
   };
 }

@@ -18,14 +18,14 @@
       pyprland
       pavucontrol
       brightnessctl
-			networkmanagerapplet
+      networkmanagerapplet
 
       kitty 
       dunst
       waybar
       rofi-wayland
 
-      gnome.nautilus
+      nautilus
     ];
   };
 }
