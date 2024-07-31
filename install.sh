@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Nix
-curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sudo sh -s -- install
 . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 
 # Git
@@ -16,14 +16,8 @@ sudo systemctl restart nix-daemon
 nix run home-manager/master -- switch --flake .
 
 # Hyprland
-nix-channel --add https://github.com/nix-community/nixGL/archive/main.tar.gz nixgl && nix-channel --update
-nix-env -iA nixgl.nixGLIntel
-sudo ln -s /home/$USER/.dotfiles/home/hyprland/nixprland /bin/nixprland
+nix profile install github:guibou/nixGL --impure
 sudo ln -s /home/$USER/.dotfiles/home/hyprland/nixprland.desktop /usr/share/wayland-sessions/nixprland.desktop
-
-# Zsh 
-echo /home/$USER/.nix-profile/bin/zsh | sudo tee -a /etc/shells
-chsh -s /home/$USER/.nix-profile/bin/zsh
 
 # SSH
 ssh-keygen -t ed25519

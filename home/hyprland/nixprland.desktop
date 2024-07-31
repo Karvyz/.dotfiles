@@ -1,5 +1,5 @@
 [Desktop Entry]
 Name=Nixprland
 Comment=Hyprland installed through Nix
-Exec=nixprland
+Exec=nixGL Hyprland
 Type=Application
