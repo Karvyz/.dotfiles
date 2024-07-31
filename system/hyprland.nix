@@ -14,17 +14,7 @@
     };
 
     environment.systemPackages = with pkgs; [
-      hyprlock
-      pyprland
-      pavucontrol
-      brightnessctl
-      networkmanagerapplet
-
       kitty 
-      dunst
-      waybar
-      rofi-wayland
-
       nautilus
     ];
   };

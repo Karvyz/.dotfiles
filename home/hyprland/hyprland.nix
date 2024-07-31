@@ -4,10 +4,11 @@ let
 in {
 
 	home.packages = with pkgs; [
+		hyprlock
 		pyprland
 		pavucontrol
 		brightnessctl
-		networkmanager
+    networkmanagerapplet
 		blueman
 	];
 
