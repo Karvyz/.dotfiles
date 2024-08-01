@@ -2,6 +2,7 @@
   imports = [
     ./desktop.nix
     ./essentials.nix
+		./games.nix
     ./gnome.nix
     ./hyprland.nix
 		./ld.nix

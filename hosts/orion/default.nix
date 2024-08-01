@@ -4,8 +4,10 @@
   imports = [ ./hardware-configuration.nix ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+		systemd-boot.enable = true;
+  	efi.canTouchEfiVariables = true;
+	};
 
 	# Hardware
 	nvidia.enable = false;
@@ -15,6 +17,7 @@
   hyprland.enable = true;
   desktop.enable = true;
 	ollama.enable = false;
+	games.enable = true;
 
   # Enables VMs
   virtualization.enable = true;
