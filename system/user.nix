@@ -6,6 +6,6 @@
     isNormalUser = true;
     description = "Karviz";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" "dialout" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" "dialout" "docker" ];
   };
 }
