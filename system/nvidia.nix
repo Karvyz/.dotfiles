@@ -6,12 +6,8 @@
   };
 
   config = lib.mkIf config.nvidia.enable {
-		# Enable OpenGL
-		hardware.opengl = {
-			enable = true;
-			driSupport = true;
-			driSupport32Bit = true;
-		};
+	  # Enable graphics driver in NixOS unstable/NixOS 24.11
+		hardware.graphics.enable = true;
 
 		# Load "nvidia" driver for Xorg and Wayland
 		# Or if you have an older card, you may have to use
@@ -33,7 +29,7 @@
 
 			# Fine-grained power management. Turns off GPU when not in use.
 			# Experimental and only works on modern Nvidia GPUs (Turing or newer).
-			powerManagement.finegrained = false;
+			powerManagement.finegrained = true;
 
 			# Use the NVidia open source kernel module (not to be confused with the
 			# independent third-party "nouveau" open source driver).
