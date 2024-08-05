@@ -10,6 +10,8 @@ in {
 		brightnessctl
     networkmanagerapplet
 		blueman
+
+		xdg-desktop-portal-hyprland
 	];
 
 	wayland.windowManager.hyprland = {

@@ -31,7 +31,6 @@
 	};
 
   home.packages = with pkgs; [
-		devenv
     fzf
     tldr
     nh

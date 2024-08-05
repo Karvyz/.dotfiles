@@ -8,7 +8,7 @@
 		opacity.terminal = 0.85;
 		cursor = {
 			name = "Adwaita";
-			package = pkgs.gnome.adwaita-icon-theme;
+			package = pkgs.adwaita-icon-theme;
 		};
 
 		targets.kde.enable = false;
