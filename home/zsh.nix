@@ -1,42 +1,53 @@
 { pkgs, ... }:
 
 {  
-  programs.zsh = {
-    enable = true;
+  programs = {
+		zsh = {
+			enable = true;
 
-    shellAliases = {
-      ll = "ls -al";
+			shellAliases = {
+				ll = "ls -al";
 
-			dv = "devenv init && vi devenv.nix && devenv shell";
-			ns = "nix-shell --command zsh";
-			nld = "LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH zsh";
-    };
+				dv = "devenv init && vi devenv.nix && devenv shell";
+				ns = "nix-shell --command zsh";
+				nld = "LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH zsh";
+			};
 
-    syntaxHighlighting.enable = true;
-    autosuggestion.enable = true;
-    enableCompletion = true;
-  };
+			syntaxHighlighting.enable = true;
+			autosuggestion.enable = true;
+			enableCompletion = true;
+		};
 
-	programs = {
+		git = {
+			enable = true;
+			userName = "Henri Gros";
+			userEmail = "henrigros1@gmail.com";
+		};
+
 		starship.enable = true;
 		atuin.enable = true;
+
 		direnv = {
 			enable = true;
 			nix-direnv.enable = true;
 		};
+
 		btop = {
 			enable = true;
 			settings.update_ms = 500;
 		};
 	};
 
-  home.packages = with pkgs; [
-    fzf
-    tldr
-    nh
-  ];
+  home = {
+		packages = with pkgs; [
+			fzf
+			tldr
+			nh
+		];
 
-  home.sessionVariables = {
-    FLAKE = "/home/karviz/.dotfiles";
-  };
+		sessionVariables = {
+			EDITOR = "nvim";
+			FLAKE = "/home/karviz/.dotfiles";
+		};
+	};
 }

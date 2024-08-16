@@ -1,5 +1,3 @@
-{ pkgs, ... }:
-
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -28,29 +26,7 @@
     ./tmux.nix
 		./kitty.nix
   ];
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
-  home.packages = [
-    (pkgs.nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
-
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
-  ];
   
-  programs.git = {
-    enable = true;
-    userName = "Henri Gros";
-    userEmail = "henrigros1@gmail.com";
-  };
-
-  home.sessionVariables = {
-     EDITOR = "nvim";
-  };
-
 	nixpkgs.config.allowUnfree = true;
 	
   # Let Home Manager install and manage itself.
