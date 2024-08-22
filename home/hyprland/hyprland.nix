@@ -94,13 +94,13 @@ bind = $mainMod, C, killactive,
 bind = $mainMod, M, exit, 
 bind = $mainMod, F, togglefloating, 
 bind = $mainMod, G, fullscreen,
-bind = $mainMod, P, pseudo, # dwindle
 bind = $mainMod, U, exec, pkill waybar
 bind = $mainMod, I, exec, waybar
 bind = $mainMod, N, exec, hyprlock
 bind = $mainMod, I, exec, pypr change_workspace +1
 bind = $mainMod, U, exec, pypr change_workspace -1
 bind = $mainMod, Q, exec, pypr toggle term
+bind = $mainMod, P,	exec, pypr toggle updater 
 bind = $mainMod, V, exec, pypr toggle volume
 
 bind = $mainMod, H, movefocus, l
