@@ -8,7 +8,7 @@
   config = lib.mkIf config.virtualization.enable {
     environment.systemPackages = with pkgs; [
       virtiofsd
-			gnome.gnome-boxes
+			gnome-boxes
 
 			distrobox
     ];

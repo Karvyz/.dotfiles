@@ -13,7 +13,5 @@
 			name = "Adwaita";
 			package = pkgs.adwaita-icon-theme;
 		};
-
-		targets.kde.enable = false;
   };
 }

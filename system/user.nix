@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   programs.zsh.enable = true;
@@ -8,4 +8,11 @@
     shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" "libvirtd" "dialout" "docker" ];
   };
+
+	home-manager = {
+		useGlobalPkgs = true;
+		useUserPackages = true;
+		extraSpecialArgs = { inherit inputs; };
+		users.karviz = import ./../home/nixos.nix;
+	};
 }

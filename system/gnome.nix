@@ -19,7 +19,6 @@
       geary # email reader
       cheese # webcam tool
       epiphany # web browser
-    ]) ++ (with pkgs.gnome; [
       gnome-music
       gnome-characters
       tali # poker game

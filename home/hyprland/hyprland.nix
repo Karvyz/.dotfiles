@@ -1,7 +1,5 @@
 { config, pkgs, ... }:
-let
-	palette = config.lib.stylix.colors;
-in {
+{
 
 	home.packages = with pkgs; [
 		hyprlock
@@ -38,8 +36,6 @@ general {
 	gaps_in = 5
 	gaps_out = 10
 	border_size = 2
-	col.active_border = rgba(${palette.base0D}ff)
-	col.inactive_border = rgba(${palette.base00}cc)
 	layout = dwindle
 	allow_tearing = false
 }

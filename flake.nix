@@ -19,7 +19,10 @@
         specialArgs = {inherit inputs;};
         modules = [ 
 					./hosts/orion
+					./home/theme.nix
 					./system
+					home-manager.nixosModules.home-manager
+					stylix.nixosModules.stylix
 				];
       };
     

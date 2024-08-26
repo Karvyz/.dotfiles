@@ -43,6 +43,7 @@
 			fzf
 			tldr
 			nh
+			(nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
 		];
 
 		sessionVariables = {
