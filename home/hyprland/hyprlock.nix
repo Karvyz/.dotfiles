@@ -1,9 +1,11 @@
-{ ... }:
-{
+{ config, ... }:
+let 
+	img = config.stylix.image;
+in {
   home.file.".config/hypr/hyprlock.conf".text = ''
 background {
 	monitor =
-	path = ~/.config/wallpaper.png   # only png supported for now
+	path = ${img}
 }
 
 input-field {
