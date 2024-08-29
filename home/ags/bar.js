@@ -1,67 +1,9 @@
-const hyprland = await Service.import("hyprland")
-const notifications = await Service.import("notifications")
-const mpris = await Service.import("mpris")
+import { Workspaces } from './modules/workspaces.js'
 const systemtray = await Service.import("systemtray")
 const audio = await Service.import("audio")
 const battery = await Service.import("battery")
 
 const vertical = true
-
-function Workspaces() {
-    const activeId = hyprland.active.workspace.bind("id")
-    const workspaces = hyprland.bind("workspaces")
-        .as(ws => ws.sort((a, b) => a.id - b.id)
-					.map(({ id }) => Widget.Button({
-            on_clicked: () => hyprland.messageAsync(`dispatch workspace ${id}`),
-            child: Widget.Label(`${id}`),
-            class_name: activeId.as(i => `${i === id ? "focused" : ""}`),
-        })))
-
-    return Widget.Box({
-        class_name: "workspaces",
-        children: workspaces,
-				vertical: vertical,
-    })
-}
-
-
-// we don't need dunst or any other notification daemon
-// because the Notifications module is a notification daemon itself
-function Notification() {
-    const popups = notifications.bind("popups")
-    return Widget.Box({
-        class_name: "notification",
-        visible: popups.as(p => p.length > 0),
-        children: [
-            Widget.Icon({
-                icon: "preferences-system-notifications-symbolic",
-            }),
-            Widget.Label({
-                label: popups.as(p => p[0]?.summary || ""),
-            }),
-        ],
-    })
-}
-
-
-function Media() {
-    const label = Utils.watch("", mpris, "player-changed", () => {
-        if (mpris.players[0]) {
-            const { track_artists, track_title } = mpris.players[0]
-            return `${track_artists.join(", ")} - ${track_title}`
-        } else {
-            return "Nothing is playing"
-        }
-    })
-
-    return Widget.Button({
-        class_name: "media",
-        on_primary_click: () => mpris.getPlayer("")?.playPause(),
-        on_scroll_up: () => mpris.getPlayer("")?.next(),
-        on_scroll_down: () => mpris.getPlayer("")?.previous(),
-        child: Widget.Label({ label }),
-    })
-}
 
 function SysTray() {
     const items = systemtray.bind("items")
@@ -117,8 +59,6 @@ function Volume() {
 
 function BatteryLabel() {
     const value = battery.bind("percent").as(p => p > 0 ? p / 100 : 0)
-    const icon = battery.bind("percent").as(p =>
-        `battery-level-${Math.floor(p / 10) * 10}-symbolic`)
 
     return Widget.CircularProgress({
 				visible: battery.bind('available'),
@@ -133,7 +73,7 @@ function BatteryLabel() {
 }
 
 const date = Variable("", {
-    poll: [1000, 'date "+%H:%M\n%e:%m"'],
+    poll: [1000, 'date "+%H:%M\n%d:%m"'],
 })
 
 function Clock() {
@@ -152,18 +92,7 @@ function Left() {
         spacing: 8,
 				vertical: vertical,
         children: [
-            Workspaces(),
-        ],
-    })
-}
-
-function Center() {
-    return Widget.Box({
-        spacing: 8,
-				vertical: vertical,
-        children: [
-            Media(),
-            Notification(),
+            Workspaces(vertical),
         ],
     })
 }
@@ -190,7 +119,6 @@ export const bar = Widget.Window({
     child: Widget.CenterBox({
 				vertical: true,
         start_widget: Left(),
-        center_widget: Center(),
         end_widget: Right(),
     }),
 })
