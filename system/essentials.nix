@@ -22,9 +22,6 @@
 		wget
 		git
 	 
-		# Browser
-		firefox
-
 		spotify
 	];
 }

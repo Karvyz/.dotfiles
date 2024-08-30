@@ -17,6 +17,7 @@
 		./ags.nix
 		./scripts
     ./zsh.nix
+		./firefox
     ./hyprland
 		./waybar.nix
 		./rofi.nix
