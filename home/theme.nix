@@ -13,5 +13,7 @@
 			name = "Adwaita";
 			package = pkgs.adwaita-icon-theme;
 		};
+
+		targets.plymouth.enable = false;
   };
 }

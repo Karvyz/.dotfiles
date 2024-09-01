@@ -1,5 +1,6 @@
 {
   imports = [
+		./boot.nix
     ./desktop.nix
     ./essentials.nix
 		./games.nix

@@ -3,12 +3,6 @@
 
   imports = [ ./hardware-configuration.nix ];
 
-  # Bootloader.
-  boot.loader = {
-		systemd-boot.enable = true;
-  	efi.canTouchEfiVariables = true;
-	};
-
   # Desktop
   gnome.enable = true;
   hyprland.enable = true;
