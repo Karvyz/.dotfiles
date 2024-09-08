@@ -22,7 +22,7 @@
 		./firefox
     ./hyprland
 		./waybar.nix
-		./rofi.nix
+		./rofi
     ./neovim
     ./gnome.nix
     ./tmux.nix

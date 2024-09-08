@@ -80,7 +80,7 @@ exec-once = nm-applet
 
 $mainMod = SUPER
 
-bindr = SUPER, SUPER_L, exec,	ags -t hub 
+bindr = SUPER, SUPER_L, exec,	rofi -show drun 
 
 bind = $mainMod, B, exec, ags -t bar
 bind = $mainMod, A, exec, kitty

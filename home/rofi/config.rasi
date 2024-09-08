@@ -1,0 +1,64 @@
+@theme "/dev/null"
+@import "theme.rasi"
+
+configuration {
+	show-icons: true;
+	steal-focus: true;
+}
+
+* {
+	background-color: transparent;
+	text-color: @fg1;
+}
+
+window {
+    width: 50%;
+		height:	50%;
+
+		border: 2px;
+    border-radius: 10px;
+		border-color: @borders;
+    
+    background-color: @bg0;
+}
+
+mainbox {
+    padding: 10px;
+}
+
+inputbar {
+    background-color: @bg1;
+    border-color: @bg3;
+
+    border: 2px;
+    border-radius: 16px;
+
+    padding: 8px 16px;
+    spacing: 8px;
+    children: [ entry ];
+}
+
+entry {
+	text-color: @fg1; 
+}
+
+textbox {
+    padding: 8px 24px;
+}
+
+
+listview {
+    background-color: transparent;
+
+    margin: 12px 0 0;
+    columns: 2;
+
+    fixed-height: false;
+}
+
+element {
+    padding: 8px 16px;
+    spacing: 8px;
+    border-radius: 160px;
+  	background-color: @bg1;
+}

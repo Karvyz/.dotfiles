@@ -4,7 +4,7 @@ let
   betterTransition = "all 0.3s cubic-bezier(.55,-0.68,.48,1.682)";
 in {
 	programs.waybar = {
-    enable = false;
+    enable = true;
     settings = [{
       layer = "top";
       position = "top";
