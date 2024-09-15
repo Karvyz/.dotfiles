@@ -77,6 +77,7 @@ misc {
 exec-once = ags
 exec-once = pypr
 exec-once = nm-applet
+exec-once = waybar
 
 $mainMod = SUPER
 

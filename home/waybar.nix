@@ -1,17 +1,16 @@
 { config, ... }:
 let
 	palette = config.lib.stylix.colors;
-  betterTransition = "all 0.3s cubic-bezier(.55,-0.68,.48,1.682)";
 in {
 	programs.waybar = {
     enable = true;
     settings = [{
       layer = "top";
-      position = "top";
+      position = "left";
+			margin = "10px 0";
 
-      modules-center = [ "hyprland/workspaces" ] ;
-      modules-left = [ "hyprland/window" "pulseaudio" "cpu" "memory"];
-      modules-right = [ "tray" "network" "battery" "clock" ];
+      modules-left = [ "hyprland/workspaces" ];
+      modules-right = [ "tray" "pulseaudio" "group/system" "network" "battery" "clock" ];
 
       "hyprland/workspaces" = {
       	format = "{name}";
@@ -24,46 +23,33 @@ in {
       	on-scroll-down = "hyprctl dispatch workspace e-1";
       };
       "clock" = {
-				format = '' {:L%H:%M}'';
-      	tooltip = true;
-				tooltip-format = "<tt><small>{calendar}</small></tt>";
-      };
-      "hyprland/window" = {
-      	max-length = 25;
-        separate-outputs = false;
-        rewrite = { "" = " None "; };
+				format = "{:%H\n%M}";
+				tooltip = false;
+				on-click = "gnome-calendar";
       };
       "memory" = {
       	interval = 5;
-      	format = " {}%";
+      	format = "";
         tooltip = true;
       };
       "cpu" = {
       	interval = 5;
-      	format = " {usage:2}%";
-        tooltip = true;
-      };
-      "disk" = {
-        format = " {free}";
+      	format = "";
         tooltip = true;
       };
       "network" = {
         format-icons = ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"];
-        format-ethernet = " {bandwidthDownOctets}";
-        format-wifi = "{icon} {signalStrength}%";
-        format-disconnected = "󰤮";
+        format-ethernet = " ";
+        format-wifi = "{icon}";
+        format-disconnected = "󰤮 ";
         tooltip = false;
       };
       "tray" = {
         spacing = 12;
       };
       "pulseaudio" = {
-        format = "{icon} {volume}% {format_source}";
-        format-bluetooth = "{volume}% {icon} {format_source}";
-        format-bluetooth-muted = " {icon} {format_source}";
-        format-muted = " {format_source}";
-        format-source = " {volume}%";
-        format-source-muted = "";
+        format = "{icon}";
+        format-bluetooth = "";
         format-icons = {
           headphone = "";
           hands-free = "";
@@ -73,89 +59,64 @@ in {
           car = "";
           default = ["" "" ""];
         };
-        on-click = "sleep 0.1 && pavucontrol";
+        on-click = "pavucontrol";
       };
       "battery" = {
         states = {
           warning = 30;
           critical = 15;
         };
-        format = "{icon} {capacity}%";
-        format-charging = "󰂄 {capacity}%";
-        format-plugged = "󱘖 {capacity}%";
+        format = "{icon}";
+        format-charging = "󰂄";
+        format-plugged = "󱘖";
         format-icons = ["󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
         on-click = "";
-        tooltip = false;
+        tooltip = true;
       };
+
+			"group/system" = {
+				orientation = "inherit";
+				drawer = {
+					"transition-left-to-right" = false;
+				};
+				modules = [ "power-profiles-daemon" "cpu" "memory" ];
+			};
+			"power-profiles-daemon" = {
+				"format" = "{icon}";
+				"tooltip-format" = "Power profile: {profile}\nDriver: {driver}";
+				"tooltip" = true;
+				"format-icons" = {
+					"default" = " ";
+					"performance" = " ";
+					"balanced" = " ";
+					"power-saver" = " ";
+				};
+			};
     }];
     style = ''
-      * {
-				font-size: 16px;
-				font-family: JetBrainsMono Nerd Font, Font Awesome, sans-serif;
-    		font-weight: bold;
-      }
-			window#waybar {
-				background: transparent;
-      }
-			.module {
-				padding: 0 10px;
-				background: #${palette.base01};
-				border-radius: 10px;
-				margin: 10px 10px 0 0;
-			}
+		* {
+			font-size: 16px;
+			font-family: FiraCode Nerd Font, Font Awesome, sans-serif;
+   		font-weight: bold;
+			opacity: 1;
+    }
+		window#waybar {
+			background-color: #${palette.base00};
+			opacity: 0.85;
+			border-radius: 16px;
+		}
+    .modules-left {
+			background-color: #${palette.base01};
+			border-radius: 16px;
+		} 
+		.modules-right {
+			background-color: #${palette.base01};
+			border-radius: 16px;
+		}
 
-			#window {
-				margin-left: 10px;
-				color: #${palette.base05};
-      }
-			#pulseaudio {
-				color: #${palette.base0D};
-			}
-			#cpu {
-				color: #${palette.base07};
-			}
-			#memory {
-				color: #${palette.base0F};	
-			}
-
-			#workspaces {
-				padding: 0px 1px;
-				border-radius: 15px;
-				border: 0px;
-				font-style: normal;
-				color: #${palette.base00};
-      }
-      #workspaces button {
-				padding: 0px 5px;
-				margin: 4px 3px;
-				border-radius: 10px;
-				border: 0px;
-				color: #${palette.base00};
-        background: linear-gradient(45deg, #${palette.base0E}, #${palette.base0F}, #${palette.base0D}, #${palette.base09});
-        background-size: 300% 300%;
-				opacity: 0.5;
-				transition: ${betterTransition};
-			}
-      #workspaces button.active {
-				opacity: 1.0;
-				min-width: 40px;
-			}
-      #workspaces button:hover {
-				opacity: 0.8;
-      }
-
-
-			#network {
-				color: #${palette.base09};
-			}
-			#battery {
-				color: #${palette.base08};
-			}
-			#clock {
-				color: #${palette.base01};
-        background: linear-gradient(45deg, #${palette.base0C}, #${palette.base0F}, #${palette.base0B}, #${palette.base08});
-        background-size: 300% 300%;
-			}
+		.module {
+			margin: 8px 0;
+		}
 			'';
   };
 }
