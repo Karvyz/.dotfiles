@@ -27,6 +27,7 @@
     ./gnome.nix
     ./tmux.nix
 		./kitty.nix
+		./zellij.nix
   ];
 
 }

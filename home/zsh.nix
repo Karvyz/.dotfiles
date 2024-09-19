@@ -10,7 +10,7 @@
 
 				dv = "devenv init && vi devenv.nix && devenv shell";
 				ns = "nix-shell --command zsh";
-				nld = "LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH zsh";
+				za = "zellij attach";
 			};
 
 			syntaxHighlighting.enable = true;
@@ -31,7 +31,6 @@
 			enable = true;
 			nix-direnv.enable = true;
 		};
-
 		btop = {
 			enable = true;
 			settings.update_ms = 500;
