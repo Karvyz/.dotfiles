@@ -16,7 +16,6 @@
       gnome-tour
       gedit # text editor
       yelp # Help view
-      geary # email reader
       cheese # webcam tool
       epiphany # web browser
       gnome-music
