@@ -16,18 +16,13 @@
 	nixpkgs.config.allowUnfree = true;
 
 	  imports = [
-		./ags.nix
 		./scripts
-    ./zsh.nix
 		./firefox
     ./hypr
-		./waybar.nix
-		./rofi
+		./shell
     ./neovim
     ./gnome.nix
-    ./tmux.nix
 		./kitty.nix
-		./zellij.nix
   ];
 
 }
