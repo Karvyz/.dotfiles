@@ -4,5 +4,6 @@
 		./binds.nix
 		./hyprlock.nix
 		./pyprland.nix
+		./dunst.nix
 	];
 }
