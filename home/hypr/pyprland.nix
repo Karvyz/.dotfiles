@@ -14,7 +14,7 @@ unfocus = "hide"
 
 [scratchpads.updater]
 animation = "fromTop"
-command = "kitty --class updater nh os switch"
+command = "kitty --class updater --hold nh os switch"
 class = "updater"
 size = "75% 60%"
 unfocus = "hide"

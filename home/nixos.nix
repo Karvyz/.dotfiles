@@ -20,7 +20,7 @@
 		./scripts
     ./zsh.nix
 		./firefox
-    ./hyprland
+    ./hypr
 		./waybar.nix
 		./rofi
     ./neovim
