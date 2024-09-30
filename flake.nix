@@ -10,10 +10,10 @@
     };
 
 		stylix.url = "github:danth/stylix";
-		ags.url = "github:Aylur/ags";
+		# ags.url = "github:Aylur/ags";
   };
 
-  outputs = { nixpkgs, home-manager, stylix, ags,  ... }@inputs: {
+  outputs = { nixpkgs, home-manager, stylix, ... }@inputs: {
     nixosConfigurations = {
       orion = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};

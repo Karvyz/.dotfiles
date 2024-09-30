@@ -6,7 +6,7 @@
 		./pyprland.nix
 
 		./dunst.nix
-		./ags.nix
+		# ./ags.nix
 		./waybar.nix
 		./rofi
 	];
