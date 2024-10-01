@@ -8,12 +8,16 @@
   	};
     base16Scheme = "${pkgs.base16-schemes}/share/themes/seti.yaml";
 		polarity = "dark";
-		opacity.terminal = 0.85;
 		cursor = {
 			name = "Adwaita";
 			package = pkgs.adwaita-icon-theme;
 		};
 
+		fonts = {
+			sizes.popups = 12;
+		};
+
+		opacity.terminal = 0.85;
 		targets.plymouth.enable = false;
   };
 }

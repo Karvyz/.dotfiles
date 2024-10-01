@@ -16,6 +16,7 @@
 			"$mainMod, N, exec, hyprlock"
 			"$mainMod, I, exec, hyprshot -m region"
 			"$mainMod SHIFT, I, exec, hyprshot -m window"
+			"$mainMod, O, exec, rofi -show calc"
 			"$mainMod, Q, exec, pypr toggle term"
 			"$mainMod, P,	exec, pypr toggle updater"
 			"$mainMod, V, exec, pypr toggle volume"

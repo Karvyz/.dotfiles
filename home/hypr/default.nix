@@ -8,6 +8,6 @@
 		./dunst.nix
 		# ./ags.nix
 		./waybar.nix
-		./rofi
+		./rofi.nix
 	];
 }
