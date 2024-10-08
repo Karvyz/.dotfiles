@@ -16,9 +16,7 @@
     virtualisation =  {
 			libvirtd.enable = true;
     	spiceUSBRedirection.enable = true;
-			podman = {
-				enable = true;
-			};
+			docker.enable = true;
 		};
   };
 }
