@@ -11,6 +11,7 @@
 				dv = "devenv init && vi devenv.nix && devenv shell";
 				ns = "nix-shell --command zsh";
 				za = "zellij attach";
+				de = "distrobox enter";
 			};
 
 			syntaxHighlighting.enable = true;
