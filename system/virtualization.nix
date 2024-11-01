@@ -12,7 +12,7 @@
 
 			distrobox
     ];
- 		hardware.nvidia-container-toolkit.enable = true; 
+ 		hardware.nvidia-container-toolkit.enable = config.nvidia.enable; 
     virtualisation =  {
 			libvirtd.enable = true;
     	spiceUSBRedirection.enable = true;
