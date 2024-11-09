@@ -9,11 +9,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+		nixvim = {
+			url = "github:nix-community/nixvim";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+
 		stylix.url = "github:danth/stylix";
-		# ags.url = "github:Aylur/ags";
   };
 
-  outputs = { nixpkgs, home-manager, stylix, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, stylix, nixvim, ... }@inputs: {
     nixosConfigurations = {
       orion = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
@@ -41,6 +45,7 @@
       modules = [
 				./home
 				stylix.homeManagerModules.stylix
+				nixvim.homeManagerModules.nixvim
 			];
     };
   };
