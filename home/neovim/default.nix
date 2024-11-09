@@ -64,6 +64,7 @@ in
 			rustaceanvim
 
 			copilot-vim
+			CopilotChat-nvim
 	];
 
     extraLuaConfig = ''
