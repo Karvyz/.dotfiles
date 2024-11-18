@@ -1,19 +1,20 @@
 {
   imports = [
-		./boot.nix
+    ./boot.nix
     ./desktop.nix
     ./essentials.nix
-		./games.nix
+    ./games.nix
     ./gnome.nix
     ./hyprland.nix
-		./ld.nix
-		./locales.nix
-		./network.nix
-		./nvidia.nix
-		./ollama.nix
-		./sound.nix
-		./updates.nix
-		./user.nix
+    ./kanata.nix
+    ./ld.nix
+    ./locales.nix
+    ./network.nix
+    ./nvidia.nix
+    ./ollama.nix
+    ./sound.nix
+    ./updates.nix
+    ./user.nix
     ./virtualization.nix
     ./xserver.nix
   ];
