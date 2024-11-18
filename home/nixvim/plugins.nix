@@ -1,25 +1,30 @@
 {
-	programs.nixvim.plugins = {
-		treesitter.enable = true;
-		lualine.enable = true;
-		oil.enable = true;
+  programs.nixvim.plugins = {
+    comment.enable = true;
+    autoclose.enable = true;
 
-		comment.enable = true;
-		autoclose.enable = true;
+    oil.enable = true;
+    telescope = {
+      enable = true;
+      extensions = {
+        fzf-native = {
+          enable = true;
+        };
+      };
+    };
 
-		web-devicons.enable = true;
-		telescope = {
-			enable = true;
-			extensions = {
-				fzf-native = {
-					enable = true;
-				};
-			};
-		};
+    copilot-lua = {
+      enable = true;
+      suggestion.autoTrigger = true;
+    };
+    copilot-chat.enable = true;
 
-		neogit.enable = true;
-		gitsigns.enable = true;
+    neogit.enable = true;
+    gitsigns.enable = true;
 
-		noice.enable = true;
-	};
+    noice.enable = true;
+    web-devicons.enable = true;
+    treesitter.enable = true;
+    lualine.enable = true;
+  };
 }

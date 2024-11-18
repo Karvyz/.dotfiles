@@ -6,11 +6,6 @@
       servers = {
         nixd.enable = true;
         clangd.enable = true;
-        # rust_analyzer = {
-        #   enable = true;
-        #   installCargo = true;
-        #   installRustc = true;
-        # };
       };
     };
 
