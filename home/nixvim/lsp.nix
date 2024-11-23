@@ -6,6 +6,7 @@
       servers = {
         nixd.enable = true;
         clangd.enable = true;
+        pyright.enable = true;
       };
     };
 
@@ -13,12 +14,19 @@
 
     cmp = {
       enable = true;
-      autoEnableSources = true;
-      settings.sources = [
-        { name = "nvim_lsp"; }
-        { name = "path"; }
-        { name = "buffer"; }
-      ];
+      settings = {
+        sources = [
+          { name = "nvim_lsp"; }
+          { name = "path"; }
+          { name = "buffer"; }
+          { name = "copilot"; }
+        ];
+        completion.completeopt = "menu,menuone,noinsert";
+        window = {
+          completion.border = [ "╭" "─" "╮" "│" "╯" "─" "╰" "│" ];
+          documentation.border = [ "╭" "─" "╮" "│" "╯" "─" "╰" "│" ];
+        };
+      };
     };
   };
 }

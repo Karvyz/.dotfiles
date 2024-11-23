@@ -22,10 +22,11 @@
 
       cmp.settings.mapping = {
         "<Tab>" = "cmp.mapping.confirm({ select = true })";
+        "<Up>" = "cmp.mapping.select_prev_item()";
+        "<Down>" = "cmp.mapping.select_next_item()";
       };
-
-      copilot-lua.suggestion.keymap.accept = "<S-Tab>";
     };
+
     keymaps = [
       {
         mode = "n";

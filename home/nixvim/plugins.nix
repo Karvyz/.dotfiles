@@ -15,7 +15,8 @@
 
     copilot-lua = {
       enable = true;
-      suggestion.autoTrigger = true;
+      suggestion.enabled = false;
+      panel.enabled = false;
     };
     copilot-chat.enable = true;
 

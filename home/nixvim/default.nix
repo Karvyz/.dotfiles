@@ -18,11 +18,8 @@
       clipboard = "unnamedplus";
       confirm = true;
 
-      # updatetime = 100; # faster completion
-
       cursorline = true;
       list = true;
-      # showmode = false;
       signcolumn = "yes";
       incsearch = true;
       termguicolors = true;
@@ -31,9 +28,6 @@
       shiftround = true;
       shiftwidth = 2;
       tabstop = 2;
-
-      completeopt = "menu,menuone";
-      wildmode = "longest:full,full";
 
       undofile = true;
       undolevels = 10000;
