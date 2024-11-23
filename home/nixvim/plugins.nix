@@ -27,5 +27,6 @@
     web-devicons.enable = true;
     treesitter.enable = true;
     lualine.enable = true;
+    dressing.enable = true;
   };
 }

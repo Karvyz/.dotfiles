@@ -13,6 +13,8 @@
           "gt" = "type_definition";
           "gi" = "implementation";
           "K" = "hover";
+          "<leader>r" = "rename";
+          "<leader>a" = "code_action";
         };
         diagnostic = {
           "<leader>j" = "goto_next";
