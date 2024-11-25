@@ -1,3 +1,4 @@
+{ inputs, ... }:
 {
   imports = [
     ./boot.nix
@@ -19,8 +20,18 @@
     ./xserver.nix
   ];
 
-  # Enable Flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix = {
+    # Enable Flakes
+    settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+
+    # Assert that system nixpkgs is the same as the one used in the flake
+    nixPath = [
+      "nixpkgs=${inputs.nixpkgs}"
+    ];
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

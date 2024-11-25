@@ -2,6 +2,7 @@
   programs.nixvim.plugins = {
     comment.enable = true;
     autoclose.enable = true;
+    lsp-format.enable = true;
 
     oil.enable = true;
     telescope = {
