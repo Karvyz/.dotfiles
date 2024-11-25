@@ -14,21 +14,21 @@
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
   imports = [
-		./ags.nix
-		./scripts
-		./theme.nix
+    ./ags.nix
+    ./scripts
+    ./theme.nix
     ./zsh.nix
     ./hyprland
-		./waybar.nix
-		./rofi.nix
+    ./waybar.nix
+    ./rofi.nix
     ./neovim
     ./gnome.nix
     ./tmux.nix
-		./kitty.nix
+    ./kitty.nix
   ];
-  
-	nixpkgs.config.allowUnfree = true;
-	
+
+  nixpkgs.config.allowUnfree = true;
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

@@ -1,8 +1,8 @@
 {
-		programs.zellij = {
-			enable = true;
-			settings = {
-				pane_frames = false;
-			};
-		};
+  programs.zellij = {
+    enable = true;
+    settings = {
+      pane_frames = false;
+    };
+  };
 }

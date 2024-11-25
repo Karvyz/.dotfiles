@@ -1,7 +1,7 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 {
-	boot = {
-		plymouth = {
+  boot = {
+    plymouth = {
       enable = true;
       theme = "cross_hud";
       themePackages = with pkgs; [
@@ -25,18 +25,18 @@
       "udev.log_priority=3"
     ];
 
-		# Bootloader.
-		loader = {
-			systemd-boot.enable = true;
-			efi.canTouchEfiVariables = true;
-	    # Hide the OS choice for bootloaders.
-			# It's still possible to open the bootloader list by pressing any key
-			# It will just not appear on screen unless a key is pressed
-			timeout = 0;
-		};
-	};
+    # Bootloader.
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+      # Hide the OS choice for bootloaders.
+      # It's still possible to open the bootloader list by pressing any key
+      # It will just not appear on screen unless a key is pressed
+      timeout = 0;
+    };
+  };
 
-	services.udev.extraRules = ''
-SUBSYSTEM=="usb", ATTRS{idVendor}=="03e7", MODE="0666"
-	'';
+  services.udev.extraRules = ''
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="03e7", MODE="0666"
+    	'';
 }

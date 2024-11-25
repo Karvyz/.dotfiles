@@ -8,12 +8,12 @@
     DisableFeedbackCommands = true;
     DisablePocket = true;
     DisableDeveloperTools = false;
-		OfferToSaveLogins = false;
-		AutofillAddressEnabled = false;
-		AutofillCreditCardEnabled = false;
+    OfferToSaveLogins = false;
+    AutofillAddressEnabled = false;
+    AutofillCreditCardEnabled = false;
 
-		Homepage.Startpage = "none";
-		DisplayBookmarksToolbar = "never";
+    Homepage.Startpage = "none";
+    DisplayBookmarksToolbar = "never";
     NoDefaultBookmarks = true;
     FirefoxHome = {
       Search = true;

@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 {
   options = {
@@ -14,7 +19,7 @@
     };
 
     environment.systemPackages = with pkgs; [
-      kitty 
+      kitty
       nautilus
     ];
   };

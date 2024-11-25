@@ -1,11 +1,11 @@
 { config, pkgs, ... }:
 
-{  
+{
   programs.tmux = {
     enable = true;
     mouse = true;
     keyMode = "vi";
-    
+
     plugins = with pkgs.tmuxPlugins; [
       vim-tmux-navigator
       sessionist
@@ -22,4 +22,4 @@
       set -g @continuum-restore 'on'
     '';
   };
-} 
+}

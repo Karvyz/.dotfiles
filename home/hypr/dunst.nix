@@ -1,6 +1,6 @@
 {
-	services.dunst = {
-		enable = true;
-		settings.global.corner_radius = 10;
-	};
+  services.dunst = {
+    enable = true;
+    settings.global.corner_radius = 10;
+  };
 }

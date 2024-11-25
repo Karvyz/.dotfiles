@@ -17,4 +17,3 @@
     BROWSER = "${pkgs.firefox-esr}/bin/firefox-esr";
   };
 }
-

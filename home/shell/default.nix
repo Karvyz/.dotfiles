@@ -1,7 +1,7 @@
 {
-	imports = [
-		./zsh.nix
-		./tmux.nix
-		./zellij.nix
-	];
+  imports = [
+    ./zsh.nix
+    ./tmux.nix
+    ./zellij.nix
+  ];
 }

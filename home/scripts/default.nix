@@ -1,5 +1,5 @@
 {
-	imports = [
-		./dev.nix
-	];
+  imports = [
+    ./dev.nix
+  ];
 }

@@ -9,44 +9,58 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-		nixvim = {
-			url = "github:nix-community/nixvim";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-		stylix.url = "github:danth/stylix";
+    stylix.url = "github:danth/stylix";
   };
 
-  outputs = { nixpkgs, home-manager, stylix, nixvim, ... }@inputs: {
-    nixosConfigurations = {
-      orion = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
-        modules = [ 
-					./hosts/orion
-					./home/theme.nix
-					./system
-					home-manager.nixosModules.home-manager
-					stylix.nixosModules.stylix
-				];
+  outputs =
+    {
+      nixpkgs,
+      home-manager,
+      stylix,
+      nixvim,
+      ...
+    }@inputs:
+    {
+      nixosConfigurations = {
+        orion = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            ./hosts/orion
+            ./home/theme.nix
+            ./system
+            home-manager.nixosModules.home-manager
+            stylix.nixosModules.stylix
+          ];
+        };
+
+        polaris = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            ./hosts/polaris.nix
+            ./system
+          ];
+        };
       };
-    
-      polaris = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
-        modules = [ 
-				./hosts/polaris.nix
-				./system
-				];
+
+      homeConfigurations.karviz = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs { system = "x86_64-linux"; };
+        extraSpecialArgs = {
+          inherit inputs;
+        };
+        modules = [
+          ./home
+          stylix.homeManagerModules.stylix
+          nixvim.homeManagerModules.nixvim
+        ];
       };
     };
-    
-    homeConfigurations.karviz = home-manager.lib.homeManagerConfiguration {
-      pkgs = import nixpkgs { system = "x86_64-linux"; };
-			extraSpecialArgs = { inherit inputs; };
-      modules = [
-				./home
-				stylix.homeManagerModules.stylix
-				nixvim.homeManagerModules.nixvim
-			];
-    };
-  };
 }

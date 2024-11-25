@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... } :
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 {
   options = {
@@ -8,15 +13,15 @@
   config = lib.mkIf config.virtualization.enable {
     environment.systemPackages = with pkgs; [
       virtiofsd
-			gnome-boxes
+      gnome-boxes
 
-			distrobox
+      distrobox
     ];
- 		hardware.nvidia-container-toolkit.enable = config.nvidia.enable; 
-    virtualisation =  {
-			libvirtd.enable = true;
-    	spiceUSBRedirection.enable = true;
-			docker.enable = true;
-		};
+    hardware.nvidia-container-toolkit.enable = config.nvidia.enable;
+    virtualisation = {
+      libvirtd.enable = true;
+      spiceUSBRedirection.enable = true;
+      docker.enable = true;
+    };
   };
 }

@@ -1,5 +1,5 @@
 {
-# Home Manager needs a bit of information about you and the paths it should
+  # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "karviz";
   home.homeDirectory = "/home/karviz";
@@ -13,18 +13,17 @@
   # release notes.
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
-	nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfree = true;
 
-	  imports = [
-		./scripts
-		./firefox
+  imports = [
+    ./scripts
+    ./firefox
     ./hypr
-		./shell
+    ./shell
     # ./neovim
-		./nixvim
+    ./nixvim
     ./gnome.nix
-		./kitty.nix
+    ./kitty.nix
   ];
 
 }
-
