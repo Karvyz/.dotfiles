@@ -13,4 +13,6 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+
+  ollama.enable = true;
 }

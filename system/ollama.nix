@@ -1,4 +1,9 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 let
   acc = if config.nvidia.enable then "cuda" else null;
@@ -13,5 +18,6 @@ in
       enable = true;
       acceleration = acc;
     };
+    environment.systemPackages = with pkgs; [ alpaca ];
   };
 }
