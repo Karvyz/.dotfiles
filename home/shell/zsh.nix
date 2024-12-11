@@ -13,10 +13,10 @@
     nushell = {
       enable = true;
       extraConfig = ''
-        	$env.config = {
-        		show_banner: false
-        		edit_mode: "vi"
-        	}
+        $env.config = {
+        	show_banner: false
+        	edit_mode: "vi"
+        }
       '';
     };
     carapace.enable = true;
@@ -45,12 +45,8 @@
       fzf
       tldr
       nh
-      (nerdfonts.override {
-        fonts = [
-          "FiraCode"
-          "DroidSansMono"
-        ];
-      })
+      nerd-fonts.fira-code
+      nerd-fonts.droid-sans-mono
     ];
 
     sessionVariables = {
