@@ -4,6 +4,7 @@
     ./boot.nix
     ./desktop.nix
     ./essentials.nix
+    ./fonts.nix
     ./games.nix
     ./gnome.nix
     ./hyprland.nix
