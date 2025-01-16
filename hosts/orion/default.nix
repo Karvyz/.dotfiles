@@ -5,6 +5,7 @@
 
   # Desktop
   gnome.enable = true;
+  kde.enable = true;
   hyprland.enable = true;
   desktop.enable = true;
 

@@ -9,6 +9,7 @@
     ./gnome.nix
     ./hyprland.nix
     ./kanata.nix
+    ./kde.nix
     ./ld.nix
     ./locales.nix
     ./network.nix

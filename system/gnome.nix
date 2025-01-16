@@ -33,6 +33,7 @@
         atomix # puzzle game
         gnome-contacts
         gnome-initial-setup
+        seahorse
       ]
     );
 
