@@ -24,6 +24,7 @@
     ./nixvim
     ./gnome.nix
     ./kitty.nix
+    ./kde.nix
   ];
 
 }
