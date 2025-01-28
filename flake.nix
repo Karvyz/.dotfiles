@@ -52,12 +52,14 @@
             inherit inputs;
           };
           modules = [
-            ./hosts/polaris.nix
+            ./hosts/polaris
+	    ./home/theme.nix
             ./system
+            home-manager.nixosModules.home-manager
+            stylix.nixosModules.stylix
           ];
-        };
+	};
       };
-
       homeConfigurations.karviz = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs { system = "x86_64-linux"; };
         extraSpecialArgs = {

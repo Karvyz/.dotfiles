@@ -1,4 +1,9 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 {
   options = {
@@ -7,5 +12,7 @@
 
   config = lib.mkIf config.games.enable {
     programs.steam.enable = true;
+
+    environment.systemPackages = with pkgs; [ heroic ];
   };
 }

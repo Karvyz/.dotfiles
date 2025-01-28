@@ -1,7 +1,10 @@
+{ pkgs, ... }:
 {
   networking.hostName = "orion"; # Work config
 
   imports = [ ./hardware-configuration.nix ];
+
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Desktop
   gnome.enable = true;
