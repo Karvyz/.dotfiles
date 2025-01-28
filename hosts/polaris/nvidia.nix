@@ -1,4 +1,9 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 {
   config = lib.mkIf config.nvidia.enable {
     hardware.graphics.enable = true;
@@ -15,8 +20,8 @@
       ];
     };
 
-    # environment.systemPackages = with pkgs; [
-    #   cudaPackages.cudatoolkit
-    # ];
+    environment.systemPackages = with pkgs; [
+      cudaPackages.cudatoolkit
+    ];
   };
 }
