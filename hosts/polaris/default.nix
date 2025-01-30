@@ -2,8 +2,8 @@
   networking.hostName = "polaris"; # Gaming config
 
   imports = [
-    ./hardware-configuration.nix
-    ./hardware-specific.nix
+    ./hardware-specific
+    ./software-specific
   ];
 
   # Desktop
