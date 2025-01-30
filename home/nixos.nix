@@ -20,11 +20,8 @@
     ./firefox
     ./hypr
     ./shell
-    # ./neovim
     ./nixvim
     ./gnome.nix
     ./kitty.nix
-    ./kde.nix
   ];
-
 }

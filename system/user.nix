@@ -1,5 +1,4 @@
-{ pkgs, inputs, ... }:
-
+{ pkgs, ... }:
 {
   programs.zsh.enable = true;
   users.users.karviz = {
@@ -13,13 +12,5 @@
       "dialout"
       "docker"
     ];
-  };
-
-  home-manager = {
-    backupFileExtension = "hm-backup";
-    extraSpecialArgs = {
-      inherit inputs;
-    };
-    users.karviz = import ./../home/nixos.nix;
   };
 }
