@@ -13,6 +13,7 @@
     ./ld.nix
     ./locales.nix
     ./network.nix
+    ./nextcloud.nix
     ./nvidia.nix
     ./ollama.nix
     ./sound.nix

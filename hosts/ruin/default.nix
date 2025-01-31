@@ -6,5 +6,6 @@
     ./software-specific
   ];
 
+  nextcloud.enable = true;
   services.openssh.enable = true;
 }
