@@ -59,6 +59,7 @@
             stylix.nixosModules.stylix
           ];
         };
+
         ruin = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs;
@@ -71,7 +72,21 @@
             stylix.nixosModules.stylix
           ];
         };
+
+        latitude = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            ./hosts/latitude
+            ./home/theme.nix
+            ./system
+            home-manager.nixosModules.home-manager
+            stylix.nixosModules.stylix
+          ];
+        };
       };
+
       homeConfigurations.karviz = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs { system = "x86_64-linux"; };
         extraSpecialArgs = {
