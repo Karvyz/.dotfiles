@@ -16,14 +16,14 @@
         };
       };
 
-      copilot-lua = {
-        enable = true;
-        settings = {
-          suggestion.enabled = false;
-          panel.enabled = false;
-        };
-      };
-      copilot-chat.enable = true;
+      #copilot-lua = {
+      #  enable = true;
+      #  settings = {
+      #    suggestion.enabled = false;
+      #    panel.enabled = false;
+      #  };
+      #};
+      #copilot-chat.enable = true;
 
       neogit.enable = true;
       gitsigns.enable = true;
