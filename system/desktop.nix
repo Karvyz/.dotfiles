@@ -14,6 +14,8 @@
     environment.systemPackages = with pkgs; [
       discord
 
+      geary
+
       libreoffice
       gimp
 

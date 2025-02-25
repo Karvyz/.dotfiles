@@ -9,6 +9,7 @@
   # Desktop
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
+  programs.niri.enable = true;
   gnome.enable = true;
   kde.enable = true;
   hyprland.enable = true;
