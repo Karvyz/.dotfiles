@@ -13,6 +13,13 @@
     services.nextcloud = {
       enable = true;
       package = pkgs.nextcloud30;
+      extraAppsEnable = true;
+      extraApps = {
+        inherit (config.services.nextcloud.package.packages.apps)
+          calendar
+          notes
+          ;
+      };
       hostName = "localhost";
       config = {
         dbtype = "sqlite";
