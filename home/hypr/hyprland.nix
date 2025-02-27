@@ -1,16 +1,4 @@
-{ pkgs, ... }:
 {
-  home.packages = with pkgs; [
-    xdg-desktop-portal-hyprland
-    hyprlock
-    hyprshot
-    pyprland
-    pavucontrol
-    brightnessctl
-    networkmanagerapplet
-    blueman
-  ];
-
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
