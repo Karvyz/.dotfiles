@@ -7,7 +7,6 @@
     ./fonts.nix
     ./games.nix
     ./gnome.nix
-    ./hyprland.nix
     ./kanata.nix
     ./kde.nix
     ./ld.nix
@@ -20,6 +19,7 @@
     ./updates.nix
     ./user.nix
     ./virtualization.nix
+    ./wm
     ./xserver.nix
   ];
 
