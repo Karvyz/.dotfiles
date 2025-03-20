@@ -22,4 +22,5 @@
   services.printing.enable = true;
 
   ollama.enable = true;
+  adb.enable = true;
 }
