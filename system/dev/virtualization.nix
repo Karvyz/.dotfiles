@@ -4,7 +4,6 @@
   pkgs,
   ...
 }:
-
 {
   options = {
     virtualization.enable = lib.mkEnableOption "Enable virtualization module";
@@ -16,12 +15,18 @@
       gnome-boxes
 
       distrobox
+      lazydocker
     ];
     hardware.nvidia-container-toolkit.enable = config.nvidia.enable;
     virtualisation = {
       libvirtd.enable = true;
       spiceUSBRedirection.enable = true;
-      docker.enable = true;
+      podman = {
+        enable = true;
+        dockerSocket.enable = true;
+        dockerCompat = true;
+      };
     };
+    environment.variables.DOCKER_HOST = "unix:///run/user/1000/podman/podman.sock";
   };
 }

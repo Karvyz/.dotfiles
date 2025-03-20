@@ -11,6 +11,9 @@
   };
 
   config = lib.mkIf config.desktop.enable {
+
+    nixpkgs.config.allowUnfree = true;
+
     environment.systemPackages = with pkgs; [
       discord
 
