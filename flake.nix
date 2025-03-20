@@ -20,6 +20,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nvf = {
+      url = "github:notashelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     stylix.url = "github:danth/stylix";
   };
 
@@ -29,6 +34,7 @@
       home-manager,
       stylix,
       nixvim,
+      nvf,
       plasma-manager,
       ...
     }@inputs:
