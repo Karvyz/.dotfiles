@@ -21,6 +21,11 @@
 
       protonvpn-gui
       qbittorrent
+
+      spotify
+      nextcloud-client
     ];
+
+    programs.kdeconnect.enable = true;
   };
 }
