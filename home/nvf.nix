@@ -24,6 +24,7 @@
 
         statusline.lualine.enable = true;
         telescope.enable = true;
+        comments.comment-nvim.enable = true;
         autocomplete.nvim-cmp = {
           enable = true;
           mappings = {
@@ -49,6 +50,11 @@
           python.enable = true;
         };
 
+        assistant.copilot = {
+          enable = true;
+          cmp.enable = true;
+        };
+
         extraPlugins = with pkgs.vimPlugins; {
           oil = {
             package = oil-nvim;
@@ -57,6 +63,16 @@
           neogit = {
             package = neogit;
             setup = "require('neogit').setup {}";
+          };
+          avante = {
+            package = avante-nvim;
+            setup = "require('avante').setup {
+              provider = 'copilot',
+              copilot = {
+                endpoint = 'https://api.githubcopilot.com/',
+                model = 'claude-3.7-sonnet',
+              }
+            }";
           };
         };
 
