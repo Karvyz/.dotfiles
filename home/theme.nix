@@ -11,6 +11,7 @@
     cursor = {
       name = "Adwaita";
       package = pkgs.adwaita-icon-theme;
+      size = 12;
     };
 
     fonts = {

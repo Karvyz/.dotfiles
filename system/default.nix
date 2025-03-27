@@ -3,14 +3,13 @@
   imports = [
     ./boot.nix
     ./desktop.nix
+    ./dev
     ./essentials.nix
     ./fonts.nix
     ./games.nix
     ./gnome.nix
-    ./hyprland.nix
     ./kanata.nix
     ./kde.nix
-    ./ld.nix
     ./locales.nix
     ./network.nix
     ./nextcloud.nix
@@ -19,7 +18,7 @@
     ./sound.nix
     ./updates.nix
     ./user.nix
-    ./virtualization.nix
+    ./wm
     ./xserver.nix
   ];
 

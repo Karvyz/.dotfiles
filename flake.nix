@@ -20,6 +20,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nvf = {
+      url = "github:notashelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     stylix.url = "github:danth/stylix";
   };
 
@@ -29,6 +34,7 @@
       home-manager,
       stylix,
       nixvim,
+      nvf,
       plasma-manager,
       ...
     }@inputs:
@@ -59,6 +65,7 @@
             stylix.nixosModules.stylix
           ];
         };
+
         ruin = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs;
@@ -71,7 +78,21 @@
             stylix.nixosModules.stylix
           ];
         };
+
+        latitude = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            ./hosts/latitude
+            ./home/theme.nix
+            ./system
+            home-manager.nixosModules.home-manager
+            stylix.nixosModules.stylix
+          ];
+        };
       };
+
       homeConfigurations.karviz = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs { system = "x86_64-linux"; };
         extraSpecialArgs = {

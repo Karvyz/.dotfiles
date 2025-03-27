@@ -4,5 +4,6 @@
     settings = {
       pane_frames = false;
     };
+    enableZshIntegration = false;
   };
 }

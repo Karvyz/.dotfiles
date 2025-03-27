@@ -11,14 +11,24 @@
   };
 
   config = lib.mkIf config.desktop.enable {
+
+    nixpkgs.config.allowUnfree = true;
+
     environment.systemPackages = with pkgs; [
       discord
+
+      geary
 
       libreoffice
       gimp
 
       protonvpn-gui
       qbittorrent
+
+      spotify
+      nextcloud-client
     ];
+
+    programs.kdeconnect.enable = true;
   };
 }
