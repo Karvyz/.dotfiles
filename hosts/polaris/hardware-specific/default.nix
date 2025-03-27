@@ -5,5 +5,5 @@
     ./nvidia.nix
   ];
 
-  boot.kernelPackages = pkgs.linuxPackages_6_12;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 }
