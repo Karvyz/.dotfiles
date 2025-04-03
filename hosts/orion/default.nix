@@ -7,10 +7,9 @@
   ];
 
   # Desktop
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
+  services.xserver.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
   gnome.enable = true;
-  kde.enable = true;
   hyprland.enable = true;
   niri.enable = true;
   desktop.enable = true;

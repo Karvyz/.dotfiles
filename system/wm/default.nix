@@ -1,4 +1,5 @@
 {
+  inputs,
   lib,
   config,
   pkgs,
@@ -15,6 +16,7 @@
   };
 
   config = lib.mkIf config.wm.enable {
+    programs.xwayland.enable = true;
     environment.systemPackages = with pkgs; [
       pavucontrol
       brightnessctl
