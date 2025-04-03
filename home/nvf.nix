@@ -25,7 +25,24 @@
         statusline.lualine.enable = true;
         telescope.enable = true;
         comments.comment-nvim.enable = true;
-        autocomplete.nvim-cmp = {
+        binds.whichKey.enable = true;
+        ui.noice.enable = true;
+        debugger.nvim-dap = {
+          enable = true;
+          ui = {
+            enable = false;
+          };
+          mappings = {
+            continue = "<F4>";
+            stepBack = "<F5>";
+            stepInto = "<F6>";
+            stepOut = "<F7>";
+            stepOver = "<F8>";
+            toggleBreakpoint = "<leader>b";
+          };
+        };
+
+        autocomplete.blink-cmp = {
           enable = true;
           mappings = {
             confirm = "<Tab>";
@@ -34,7 +51,31 @@
           };
         };
 
-        lsp.formatOnSave = true;
+        lsp = {
+          formatOnSave = true;
+          lsplines.enable = true;
+          mappings = {
+            codeAction = "<leader>ca";
+            goToDefinition = "gd";
+            goToDeclaration = "gD";
+            hover = "<leader>h";
+            previousDiagnostic = "<leader>k";
+            nextDiagnostic = "<leader>j";
+          };
+        };
+        luaConfigPre = ''
+          vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled(), { bufnr })
+        '';
+
+        autopairs.nvim-autopairs.enable = true;
+        utility.motion.leap = {
+          enable = true;
+          mappings = {
+            leapBackwardTill = "<leader>sk";
+            leapForwardTill = "<leader>sj";
+          };
+        };
+
         languages = {
           enableLSP = true;
           enableTreesitter = true;
@@ -45,7 +86,10 @@
             lsp.server = "nixd";
             format.type = "nixfmt";
           };
-          rust.enable = true;
+          rust = {
+            enable = true;
+            dap.enable = true;
+          };
           clang.enable = true;
           python.enable = true;
         };
@@ -71,7 +115,11 @@
               copilot = {
                 endpoint = 'https://api.githubcopilot.com/',
                 model = 'claude-3.7-sonnet',
-              }
+              },
+              windows = {
+	      	      position = 'left',
+                width = 50,
+              },
             }";
           };
         };
