@@ -9,7 +9,7 @@
     hardware.graphics.enable = true;
     services.xserver.videoDrivers = [ "nvidia" ];
     hardware.nvidia.open = true; # Set to false for proprietary drivers
-    hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
+    hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
 
     nix.settings = {
       substituters = [
