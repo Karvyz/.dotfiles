@@ -53,7 +53,6 @@
 
         lsp = {
           formatOnSave = true;
-          lsplines.enable = true;
           mappings = {
             codeAction = "<leader>ca";
             goToDefinition = "gd";
@@ -117,7 +116,7 @@
                 model = 'claude-3.7-sonnet',
               },
               windows = {
-	      	      position = 'left',
+	      	      position = 'right',
                 width = 50,
               },
             }";
