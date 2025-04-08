@@ -17,5 +17,8 @@
   gnome.enable = true;
   nextcloud.enable = true;
   services.openssh.enable = true;
-  environment.systemPackages = [ pkgs.firefox-esr ];
+  environment.systemPackages = [
+    pkgs.firefox-esr
+    pkgs.wol
+  ];
 }
