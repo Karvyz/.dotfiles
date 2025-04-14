@@ -1,8 +1,10 @@
+{ pkgs, ... }:
 {
   networking.hostName = "orion"; # Work config
 
   imports = [
-    ./hardware-specific
+    ./hardware-configuration.nix
+    ./hardware-specific.nix
     ./software-specific
   ];
 
@@ -10,7 +12,7 @@
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
   gnome.enable = true;
-  hyprland.enable = true;
+  # hyprland.enable = true;
   niri.enable = true;
   desktop.enable = true;
 
@@ -22,4 +24,6 @@
 
   ollama.enable = true;
   adb.enable = true;
+
+  games.enable = true;
 }
