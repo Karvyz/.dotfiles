@@ -20,7 +20,7 @@
       geary
 
       libreoffice
-      gimp
+      gimp3
 
       protonvpn-gui
       qbittorrent
