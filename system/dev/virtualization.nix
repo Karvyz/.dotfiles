@@ -16,6 +16,8 @@
 
       distrobox
       lazydocker
+
+      podman-compose
     ];
     hardware.nvidia-container-toolkit.enable = config.nvidia.enable;
     virtualisation = {
