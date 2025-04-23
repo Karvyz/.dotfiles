@@ -67,12 +67,12 @@
         '';
 
         autopairs.nvim-autopairs.enable = true;
-        utility.motion.leap = {
-          enable = true;
-          mappings = {
-            leapBackwardTill = "<leader>sk";
-            leapForwardTill = "<leader>sj";
+        utility = {
+          yazi-nvim = {
+            enable = true;
+            mappings.openYazi = "-";
           };
+          motion.flash-nvim.enable = true;
         };
 
         languages = {
@@ -124,12 +124,6 @@
         };
 
         keymaps = [
-          {
-            key = "-";
-            mode = "n";
-            silent = true;
-            action = ":Oil<CR>";
-          }
           {
             key = "<leader>g";
             mode = "n";
