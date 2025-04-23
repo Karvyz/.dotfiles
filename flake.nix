@@ -3,14 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nipkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
 
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nixvim = {
-      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -27,63 +23,30 @@
       nixpkgs,
       home-manager,
       stylix,
-      nixvim,
-      nvf,
       ...
     }@inputs:
+    let
+      mkSystem =
+        hostname:
+        nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            (./hosts + "/${hostname}")
+            ./home/theme.nix
+            ./system
+            home-manager.nixosModules.home-manager
+            stylix.nixosModules.stylix
+          ];
+        };
+    in
     {
       nixosConfigurations = {
-        orion = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs;
-          };
-          modules = [
-            ./hosts/orion
-            ./home/theme.nix
-            ./system
-            home-manager.nixosModules.home-manager
-            stylix.nixosModules.stylix
-          ];
-        };
-
-        polaris = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs;
-          };
-          modules = [
-            ./hosts/polaris
-            ./home/theme.nix
-            ./system
-            home-manager.nixosModules.home-manager
-            stylix.nixosModules.stylix
-          ];
-        };
-
-        ruin = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs;
-          };
-          modules = [
-            ./hosts/ruin
-            ./home/theme.nix
-            ./system
-            home-manager.nixosModules.home-manager
-            stylix.nixosModules.stylix
-          ];
-        };
-
-        latitude = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs;
-          };
-          modules = [
-            ./hosts/latitude
-            ./home/theme.nix
-            ./system
-            home-manager.nixosModules.home-manager
-            stylix.nixosModules.stylix
-          ];
-        };
+        orion = mkSystem "orion";
+        polaris = mkSystem "polaris";
+        ruin = mkSystem "ruin";
+        latitude = mkSystem "latitude";
       };
 
       homeConfigurations.karviz = home-manager.lib.homeManagerConfiguration {
@@ -94,7 +57,7 @@
         modules = [
           ./home
           stylix.homeManagerModules.stylix
-          nixvim.homeManagerModules.nixvim
+          # nixvim.homeManagerModules.nixvim
         ];
       };
     };
