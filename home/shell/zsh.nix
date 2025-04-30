@@ -27,6 +27,7 @@
       userEmail = "henrigros1@gmail.com";
     };
 
+    bash.enable = true;
     starship.enable = true;
     atuin.enable = true;
 
@@ -49,7 +50,7 @@
 
     sessionVariables = {
       EDITOR = "nvim";
-      FLAKE = "/home/karviz/.dotfiles";
+      NH_FLAKE = "/home/karviz/.dotfiles";
     };
 
     shellAliases = {
