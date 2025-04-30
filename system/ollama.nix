@@ -18,6 +18,9 @@ in
       enable = true;
       acceleration = acc;
     };
-    environment.systemPackages = with pkgs; [ alpaca ];
+    environment.systemPackages = with pkgs; [
+      alpaca
+      llama-cpp
+    ];
   };
 }
