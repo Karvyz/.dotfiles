@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   options.nvidia.enable = lib.mkEnableOption "Enable nvidia module";
   config = lib.mkIf config.nvidia.enable {
@@ -15,6 +20,16 @@
     };
 
     # CUDA
+    nixpkgs.config = {
+      allowUnfree = true;
+      cudaSupport = true;
+    };
+    environment.variables = {
+      CUDA_PATH = pkgs.cudatoolkit;
+      CUDA_LIBRARY_PATH = lib.makeLibraryPath [
+        pkgs.cudatoolkit
+      ];
+    };
     nix.settings = {
       substituters = [
         "https://nix-community.cachix.org"
