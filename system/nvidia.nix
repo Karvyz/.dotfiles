@@ -27,7 +27,7 @@
     environment.variables = {
       CUDA_PATH = pkgs.cudatoolkit;
       CUDA_LIBRARY_PATH = lib.makeLibraryPath [
-        pkgs.cudatoolkit
+        pkgs.linuxPackages.nvidia_x11
       ];
     };
     nix.settings = {
