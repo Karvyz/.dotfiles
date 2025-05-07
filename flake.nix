@@ -49,16 +49,16 @@
         latitude = mkSystem "latitude";
       };
 
-      homeConfigurations.karviz = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { system = "x86_64-linux"; };
-        extraSpecialArgs = {
-          inherit inputs;
-        };
-        modules = [
-          ./home
-          stylix.homeManagerModules.stylix
-          # nixvim.homeManagerModules.nixvim
-        ];
-      };
+      # homeConfigurations.karviz = home-manager.lib.homeManagerConfiguration {
+      #   pkgs = import nixpkgs { system = "x86_64-linux"; };
+      #   extraSpecialArgs = {
+      #     inherit inputs;
+      #   };
+      #   modules = [
+      #     ./home
+      #     stylix.homeManagerModules.stylix
+      #     # nixvim.homeManagerModules.nixvim
+      #   ];
+      # };
     };
 }
