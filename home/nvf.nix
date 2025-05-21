@@ -52,6 +52,7 @@
         };
 
         lsp = {
+          enable = true;
           formatOnSave = true;
           mappings = {
             codeAction = "<leader>ca";
@@ -76,7 +77,6 @@
         };
 
         languages = {
-          enableLSP = true;
           enableTreesitter = true;
           enableFormat = true;
 
