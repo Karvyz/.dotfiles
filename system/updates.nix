@@ -1,7 +1,7 @@
 { inputs, ... }:
 {
   system.autoUpgrade = {
-    enable = true;
+    enable = false;
     flake = inputs.self.outPath;
     flags = [
       "--update-input"
@@ -11,8 +11,11 @@
     randomizedDelaySec = "45min";
   };
 
-  nix.gc = {
-    automatic = true;
-    options = "--delete-older-than 14d";
+  nix = {
+    optimise.automatic = true;
+    gc = {
+      automatic = true;
+      options = "--delete-older-than 14d";
+    };
   };
 }
