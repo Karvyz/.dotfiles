@@ -20,6 +20,7 @@
     ./firefox
     ./hypr
     ./shell
+    ./niri.nix
     # ./nixvim
     ./nvf.nix
     ./gnome.nix
