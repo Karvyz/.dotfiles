@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 {
   networking.hostName = "orion"; # Work config
 
@@ -9,8 +8,7 @@
   ];
 
   # Desktop
-  services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
+  services.displayManager.gdm.enable = true;
   gnome.enable = true;
   # hyprland.enable = true;
   niri.enable = true;
