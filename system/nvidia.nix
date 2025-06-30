@@ -24,12 +24,19 @@
       allowUnfree = true;
       cudaSupport = true;
     };
-    environment.variables = {
-      CUDA_PATH = pkgs.cudatoolkit;
-      CUDA_LIBRARY_PATH = lib.makeLibraryPath [
-        pkgs.linuxPackages.nvidia_x11
+    environment = {
+      variables = {
+        CUDA_PATH = pkgs.cudatoolkit;
+        CUDA_LIBRARY_PATH = lib.makeLibraryPath [
+          pkgs.linuxPackages.nvidia_x11
+          pkgs.cudaPackages.cudnn
+        ];
+      };
+      systemPackages = with pkgs; [
+        cudaPackages.cuda_nvcc
       ];
     };
+
     nix.settings = {
       substituters = [
         "https://nix-community.cachix.org"
