@@ -4,7 +4,7 @@
 
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox-esr;
+    # package = pkgs.firefox-esr;
     profiles.custom-profile = {
       name = "Custom profile";
       isDefault = true;
@@ -14,6 +14,6 @@
   };
 
   home.sessionVariables = {
-    BROWSER = "${pkgs.firefox-esr}/bin/firefox-esr";
+    BROWSER = "${pkgs.firefox}/bin/firefox";
   };
 }
