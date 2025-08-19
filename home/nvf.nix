@@ -93,11 +93,6 @@
           python.enable = true;
         };
 
-        assistant.copilot = {
-          enable = true;
-          cmp.enable = true;
-        };
-
         extraPlugins = with pkgs.vimPlugins; {
           oil = {
             package = oil-nvim;
@@ -106,20 +101,6 @@
           neogit = {
             package = neogit;
             setup = "require('neogit').setup {}";
-          };
-          avante = {
-            package = avante-nvim;
-            setup = "require('avante').setup {
-              provider = 'copilot',
-              copilot = {
-                endpoint = 'https://api.githubcopilot.com/',
-                model = 'claude-3.7-sonnet',
-              },
-              windows = {
-	      	      position = 'right',
-                width = 50,
-              },
-            }";
           };
         };
 
