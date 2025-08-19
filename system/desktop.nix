@@ -27,6 +27,8 @@
 
       spotify
       nextcloud-client
+
+      jan
     ];
 
     programs.kdeconnect.enable = true;
