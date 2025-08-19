@@ -14,7 +14,6 @@
     ./network.nix
     ./nextcloud.nix
     ./nvidia.nix
-    ./ollama.nix
     ./sound.nix
     ./updates.nix
     ./user.nix

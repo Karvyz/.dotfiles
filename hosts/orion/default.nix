@@ -20,7 +20,6 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  ollama.enable = true;
   adb.enable = true;
 
   games.enable = true;
