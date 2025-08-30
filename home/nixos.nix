@@ -16,12 +16,12 @@
   nixpkgs.config.allowUnfree = true;
 
   imports = [
+    ./anyrun.nix
     ./scripts
     ./firefox
     ./hypr
     ./shell
     ./niri.nix
-    # ./nixvim
     ./nvf.nix
     ./gnome.nix
     ./kitty.nix

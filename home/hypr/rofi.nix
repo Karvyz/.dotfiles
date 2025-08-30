@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   programs.rofi = {
-    enable = true;
+    enable = false;
     cycle = true;
     location = "center";
     plugins = [

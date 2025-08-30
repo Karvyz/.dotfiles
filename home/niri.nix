@@ -73,8 +73,7 @@
     binds {
         Mod+Z { show-hotkey-overlay; }
 
-        Mod+Super_L { spawn "walker"; }
-        Mod+D { spawn "wofi" "--show" "drun"; }
+        Mod+D { spawn "anyrun"; }
         Mod+C { close-window; }
         Super+Alt+L { spawn "hyprlock"; }
 
