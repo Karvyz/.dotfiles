@@ -34,8 +34,8 @@
           };
           modules = [
             (./hosts + "/${hostname}")
-            ./home/theme.nix
             ./system
+            ./themes
             home-manager.nixosModules.home-manager
             stylix.nixosModules.stylix
           ];

@@ -7,6 +7,8 @@
     ./software-specific
   ];
 
+  theme = "ira";
+
   # Desktop
   services.displayManager.gdm.enable = true;
   gnome.enable = true;
