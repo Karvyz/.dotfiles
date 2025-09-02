@@ -12,7 +12,6 @@ in
     config = {
       y.fraction = 0.4;
       width.fraction = 0.4;
-      height.fraction = 0.4;
       hidePluginInfo = true;
       ignoreExclusiveZones = true;
 
