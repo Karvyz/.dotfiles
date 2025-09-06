@@ -1,166 +1,42 @@
+{ config, ... }:
 {
-  xdg.configFile."niri/config.kdl".text = ''
-    input {
-        keyboard {
-            xkb {
-                layout "ch(fr)"
-            }
-        }
+  programs.niri = {
+    settings = {
+      input = {
+        keyboard.xkb.layout = "ch(fr)";
+        focus-follows-mouse.enable = true;
+      };
 
-        touchpad {
-            tap
-            natural-scroll
-        }
+      outputs."eDP-1".scale = 1;
+      prefer-no-csd = true;
+      layout = {
+        gaps = 10;
+        border.width = 2;
+      };
 
-        warp-mouse-to-focus
-        focus-follows-mouse max-scroll-amount="0%"
-    }
+      binds = with config.lib.niri.actions; {
+        "Mod+Z".action = show-hotkey-overlay;
+        "Mod+D".action.spawn = "anyrun";
+        "Mod+C".action = close-window;
+        "Mod+Alt+L".action.spawn = "hyprlock";
+        "Mod+F".action = maximize-column;
+        "Mod+Shift+F".action = fullscreen-window;
+        "Mod+Shift+E".action.quit.skip-confirmation = true;
 
-    output "eDP-1" {
-        mode "1920x1200@120"
-        scale 1
-        transform "normal"
-        position x=0 y=0
-    }
+        "Mod+P".action = screenshot;
+        "Mod+Shift+P".action = screenshot-window;
 
-    prefer-no-csd
-    layout {
-        gaps 10
-        center-focused-column "never"
+        "Mod+A".action.spawn = "kitty";
+        "Mod+E".action.spawn = "nautilus";
+        "Mod+B".action.spawn = "firefox";
 
-        preset-column-widths {
-            proportion 0.33333
-            proportion 0.5
-            proportion 0.66667
-        }
-
-        focus-ring {
-            off
-        }
-
-        border {
-            width 2
-            active-color "#ffc87f"
-            inactive-color "#505050"
-        }
-    }
-    animations {
-        slowdown 5.0
-    }
-
-
-    spawn-at-startup "waybar"
-
-    spawn-at-startup "xwayland-satellite"
-    environment {
-        DISPLAY ":0"
-    }
-
-    screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
-
-    window-rule {
-        geometry-corner-radius 10
-        clip-to-geometry true
-    }
-
-    window-rule {
-        match app-id="firefox"
-        match app-id="steam"
-        match app-id="geary"
-        open-maximized true
-    }
-
-    binds {
-        Mod+Z { show-hotkey-overlay; }
-
-        Mod+D { spawn "anyrun"; }
-        Mod+C { close-window; }
-        Super+Alt+L { spawn "hyprlock"; }
-
-        Mod+A { spawn "kitty"; }
-        Mod+E { spawn "nautilus"; }
-
-        Mod+P { screenshot; }
-        Ctrl+Mod+P { screenshot-screen; }
-        Alt+Mod+P { screenshot-window; }
-
-        Mod+Shift+E { quit; }
-
-        XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
-        XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
-        XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
-        XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
-
-        Mod+Left  { focus-column-left; }
-        Mod+Down  { focus-window-down; }
-        Mod+Up    { focus-window-up; }
-        Mod+Right { focus-column-right; }
-        Mod+H     { focus-column-left; }
-        Mod+L     { focus-column-right; }
-
-        Mod+Ctrl+Left  { move-column-left; }
-        Mod+Ctrl+Down  { move-window-down; }
-        Mod+Ctrl+Up    { move-window-up; }
-        Mod+Ctrl+Right { move-column-right; }
-        Mod+Ctrl+H     { move-column-left; }
-        Mod+Ctrl+L     { move-column-right; }
-
-        Mod+J     { focus-window-or-workspace-down; }
-        Mod+K     { focus-window-or-workspace-up; }
-        Mod+Ctrl+J     { move-window-down-or-to-workspace-down; }
-        Mod+Ctrl+K     { move-window-up-or-to-workspace-up; }
-
-        Mod+Home { focus-column-first; }
-        Mod+End  { focus-column-last; }
-        Mod+Ctrl+Home { move-column-to-first; }
-        Mod+Ctrl+End  { move-column-to-last; }
-
-        Mod+Page_Down      { focus-workspace-down; }
-        Mod+Page_Up        { focus-workspace-up; }
-        Mod+U              { focus-workspace-down; }
-        Mod+I              { focus-workspace-up; }
-        Mod+Ctrl+U         { move-column-to-workspace-down; }
-        Mod+Ctrl+I         { move-column-to-workspace-up; }
-
-        Mod+Shift+U         { move-workspace-down; }
-        Mod+Shift+I         { move-workspace-up; }
-
-        Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
-        Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
-        Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
-        Mod+Ctrl+WheelScrollUp   cooldown-ms=150 { move-column-to-workspace-up; }
-
-        Mod+WheelScrollRight      { focus-column-right; }
-        Mod+WheelScrollLeft       { focus-column-left; }
-        Mod+Ctrl+WheelScrollRight { move-column-right; }
-        Mod+Ctrl+WheelScrollLeft  { move-column-left; }
-
-        Mod+Shift+WheelScrollDown      { focus-column-right; }
-        Mod+Shift+WheelScrollUp        { focus-column-left; }
-        Mod+Ctrl+Shift+WheelScrollDown { move-column-right; }
-        Mod+Ctrl+Shift+WheelScrollUp   { move-column-left; }
-
-        Mod+1 { focus-workspace 1; }
-        Mod+2 { focus-workspace 2; }
-        Mod+3 { focus-workspace 3; }
-        Mod+4 { focus-workspace 4; }
-        Mod+5 { focus-workspace 5; }
-        Mod+6 { focus-workspace 6; }
-        Mod+7 { focus-workspace 7; }
-        Mod+8 { focus-workspace 8; }
-        Mod+9 { focus-workspace 9; }
-
-        Mod+R { switch-preset-column-width; }
-        Mod+Shift+R { switch-preset-window-height; }
-        Mod+Ctrl+R { reset-window-height; }
-        Mod+F { maximize-column; }
-        Mod+Shift+F { fullscreen-window; }
-        Mod+Shift+C { center-column; }
-
-        Mod+V       { toggle-window-floating; }
-        Mod+Shift+V { switch-focus-between-floating-and-tiling; }
-
-        Mod+Shift+P { power-off-monitors; }
-    }
-  '';
+        "XF86MonBrightnessUp".action.spawn-sh = "brightnessctl set 10%+";
+        "XF86MonBrightnessDown".action.spawn-sh = "brightnessctl set 10%-";
+        "XF86AudioRaiseVolume".action.spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+";
+        "XF86AudioLowerVolume".action.spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-";
+        "XF86AudioMute".action.spawn-sh = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+        "XF86AudioMicMute".action.spawn-sh = "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
+      };
+    };
+  };
 }
