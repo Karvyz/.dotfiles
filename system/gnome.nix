@@ -17,6 +17,7 @@
       with pkgs;
       [
         gnome-photos
+        gnome-text-editor
         gnome-tour
         gedit # text editor
         yelp # Help view
