@@ -7,7 +7,7 @@
     ./software-specific
   ];
 
-  theme = "ira";
+  theme = "rmbrs";
 
   # Desktop
   services.displayManager.gdm.enable = true;

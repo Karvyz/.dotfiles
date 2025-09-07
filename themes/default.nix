@@ -9,6 +9,7 @@
   imports = [
     ./ashes.nix
     ./ira.nix
+    ./rmbrs.nix
     ./seti.nix
   ];
 
@@ -17,6 +18,7 @@
       type = lib.types.enum [
         "ashes"
         "ira"
+        "rmbrs"
         "seti"
       ];
       default = "seti";
@@ -28,6 +30,7 @@
     themes = {
       ashes.enable = lib.mkDefault (config.theme == "ashes");
       ira.enable = lib.mkDefault (config.theme == "ira");
+      rmbrs.enable = lib.mkDefault (config.theme == "rmbrs");
       seti.enable = lib.mkDefault (config.theme == "seti");
     };
 
