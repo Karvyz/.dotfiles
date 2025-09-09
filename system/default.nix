@@ -18,6 +18,7 @@
     ./updates.nix
     ./user.nix
     ./wm
+    ./xdg.nix
     ./xserver.nix
   ];
 
