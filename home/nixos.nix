@@ -25,5 +25,6 @@
     ./nvf.nix
     ./gnome.nix
     ./kitty.nix
+    ./vesktop.nix
   ];
 }
