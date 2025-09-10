@@ -19,7 +19,13 @@
 
         git = {
           enable = true;
-          vim-fugitive.enable = false;
+          neogit = {
+            enable = true;
+            mappings.open = "<leader>g";
+            mappings.commit = null;
+            mappings.pull = null;
+            mappings.push = null;
+          };
         };
 
         statusline.lualine.enable = true;
@@ -69,10 +75,7 @@
 
         autopairs.nvim-autopairs.enable = true;
         utility = {
-          yazi-nvim = {
-            enable = true;
-            mappings.openYazi = "-";
-          };
+          oil-nvim.enable = true;
           motion.flash-nvim.enable = true;
         };
 
@@ -93,23 +96,11 @@
           python.enable = true;
         };
 
-        extraPlugins = with pkgs.vimPlugins; {
-          oil = {
-            package = oil-nvim;
-            setup = "require('oil').setup {}";
-          };
-          neogit = {
-            package = neogit;
-            setup = "require('neogit').setup {}";
-          };
-        };
-
         keymaps = [
           {
-            key = "<leader>g";
+            key = "-";
             mode = "n";
-            silent = true;
-            action = ":Neogit<CR>";
+            action = ":Oil<CR>";
           }
         ];
       };
