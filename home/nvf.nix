@@ -94,6 +94,7 @@
           };
           clang.enable = true;
           python.enable = true;
+          bash.enable = true;
         };
 
         keymaps = [
