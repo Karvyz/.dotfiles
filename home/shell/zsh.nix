@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 {
   programs = {
     zsh = {
@@ -37,6 +36,7 @@
     };
     btop = {
       enable = true;
+      package = pkgs.btop-cuda;
       settings.update_ms = 500;
     };
   };
