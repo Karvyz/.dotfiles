@@ -46,6 +46,7 @@
       fzf
       tldr
       nh
+      wol
     ];
 
     sessionVariables = {
