@@ -12,7 +12,30 @@
       layout = {
         gaps = 10;
         border.width = 2;
+        background-color = "transparent";
+        default-column-width.proportion = 0.5;
       };
+
+      overview.workspace-shadow.enable = false;
+
+      window-rules = [
+        {
+          matches = [
+            { app-id = "firefox"; }
+            { app-id = "Jan"; }
+          ];
+          open-maximized = true;
+        }
+      ];
+
+      layer-rules = [
+        {
+          matches = [
+            { namespace = "hyprpaper"; }
+          ];
+          place-within-backdrop = true;
+        }
+      ];
 
       binds = with config.lib.niri.actions; {
         "Mod+Z".action = show-hotkey-overlay;
@@ -22,6 +45,7 @@
         "Mod+F".action = maximize-column;
         "Mod+Shift+F".action = fullscreen-window;
         "Mod+Shift+E".action.quit.skip-confirmation = true;
+        "Mod+Tab".action = toggle-overview;
 
         "Mod+P".action = screenshot;
         "Mod+Shift+P".action = screenshot-window;
@@ -37,6 +61,7 @@
         "XF86AudioMute".action.spawn-sh = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
         "XF86AudioMicMute".action.spawn-sh = "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
       };
+
     };
   };
 }
