@@ -51,7 +51,6 @@
         orion = mkSystem "orion";
         polaris = mkSystem "polaris";
         ruin = mkSystem "ruin";
-        latitude = mkSystem "latitude";
       };
 
       # homeConfigurations.karviz = home-manager.lib.homeManagerConfiguration {
