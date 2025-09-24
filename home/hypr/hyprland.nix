@@ -1,6 +1,7 @@
+{ config, ... }:
 {
   wayland.windowManager.hyprland = {
-    enable = true;
+    enable = config.hyprland.enable;
     settings = {
 
       monitor = ",1920x1200@120,auto,1";

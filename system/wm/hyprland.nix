@@ -4,14 +4,12 @@
   pkgs,
   ...
 }:
-
 {
-  options = {
-    hyprland.enable = lib.mkEnableOption "Enable hyprland module";
-  };
+  options.hyprland.enable = lib.mkEnableOption "Enable hyprland module";
 
   config = lib.mkIf config.hyprland.enable {
     wm.enable = true;
+    home-manager.users.karviz.hyprland.enable = true;
     programs.hyprland = {
       enable = true;
       xwayland.enable = true;
