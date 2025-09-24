@@ -16,7 +16,6 @@
   nixpkgs.config.allowUnfree = true;
 
   imports = [
-    ./anyrun.nix
     ./scripts
     ./firefox
     ./hypr
@@ -26,6 +25,7 @@
     ./gnome.nix
     ./kitty.nix
     ./vesktop.nix
+    ./wm
     ./xdg.nix
   ];
 }
