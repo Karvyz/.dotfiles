@@ -73,5 +73,7 @@
 
       };
     };
+
+    hyprpaper.enable = true;
   };
 }
