@@ -5,6 +5,7 @@
     ./desktop.nix
     ./dev
     ./essentials.nix
+    ./flatpak.nix
     ./fonts.nix
     ./games.nix
     ./gnome.nix
