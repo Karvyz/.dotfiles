@@ -1,19 +1,19 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 {
   imports = [ ./policies.nix ];
 
   programs.firefox = {
     enable = true;
-    # package = pkgs.firefox-esr;
-    profiles.custom-profile = {
-      name = "Custom profile";
+    profiles.karviz = {
+      name = "karviz";
       isDefault = true;
-      userChrome = import ./userChrome.nix;
-      extraConfig = import ./userjs.nix;
+      extensions.force = true;
     };
   };
 
-  home.sessionVariables = {
-    BROWSER = "${pkgs.firefox}/bin/firefox";
+  home.sessionVariables.BROWSER = lib.makeBinPath [ pkgs.firefox ];
+  stylix.targets.firefox = {
+    profileNames = [ "karviz" ];
+    colorTheme.enable = true;
   };
 }
