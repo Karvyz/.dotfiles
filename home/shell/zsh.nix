@@ -22,8 +22,10 @@
 
     git = {
       enable = true;
-      userName = "Henri Gros";
-      userEmail = "henrigros1@gmail.com";
+      settings.user = {
+        name = "Henri Gros";
+        email = "henrigros1@gmail.com";
+      };
     };
 
     bash.enable = true;

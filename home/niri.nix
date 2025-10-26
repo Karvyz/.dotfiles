@@ -56,8 +56,8 @@
           "Mod+Shift+E".action.quit.skip-confirmation = true;
           "Mod+Tab".action = toggle-overview;
 
-          "Mod+P".action = screenshot;
-          "Mod+Shift+P".action = screenshot-window;
+          "Mod+P".action.screenshot = [ ];
+          "Mod+Shift+P".action.screenshot-window = [ ];
 
           "Mod+A".action.spawn = "kitty";
           "Mod+E".action.spawn = "nautilus";
