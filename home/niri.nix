@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }:
 {
@@ -20,7 +19,7 @@
         prefer-no-csd = true;
         layout = {
           gaps = 10;
-          border.width = 2;
+          border.width = config.stylix.borders.width;
           background-color = "transparent";
           default-column-width.proportion = 0.5;
         };
@@ -28,6 +27,15 @@
         overview.workspace-shadow.enable = false;
 
         window-rules = [
+          {
+            geometry-corner-radius = {
+              bottom-left = config.stylix.borders.radius + 0.0;
+              bottom-right = config.stylix.borders.radius + 0.0;
+              top-left = config.stylix.borders.radius + 0.0;
+              top-right = config.stylix.borders.radius + 0.0;
+            };
+            clip-to-geometry = true;
+          }
           {
             matches = [
               { app-id = "firefox"; }
