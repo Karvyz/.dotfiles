@@ -21,6 +21,7 @@
     ./hypr
     ./shell
     ./niri.nix
+    ./custom-options.nix
     ./nvf.nix
     ./gnome.nix
     ./kitty.nix

@@ -4,6 +4,7 @@
     ./boot.nix
     ./desktop.nix
     ./dev
+    ./custom-options.nix
     ./essentials.nix
     ./flatpak.nix
     ./fonts.nix
