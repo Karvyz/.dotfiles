@@ -31,6 +31,9 @@
       jan
     ];
 
-    programs.kdeconnect.enable = true;
+    programs = {
+      kdeconnect.enable = true;
+      noisetorch.enable = true;
+    };
   };
 }
