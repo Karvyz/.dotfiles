@@ -17,6 +17,12 @@
           shiftwidth = 0;
         };
 
+        clipboard = {
+          enable = true;
+          providers.wl-copy.enable = true;
+          registers = "unnamedplus";
+        };
+
         git = {
           enable = true;
           neogit = {
@@ -60,6 +66,7 @@
         lsp = {
           enable = true;
           formatOnSave = true;
+          inlayHints.enable = true;
           mappings = {
             codeAction = "<leader>ca";
             goToDefinition = "gd";
@@ -69,9 +76,6 @@
             nextDiagnostic = "<leader>j";
           };
         };
-        luaConfigPre = ''
-          vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled(), { bufnr })
-        '';
 
         autopairs.nvim-autopairs.enable = true;
         utility = {
