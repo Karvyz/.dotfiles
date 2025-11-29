@@ -26,6 +26,10 @@
 
         overview.workspace-shadow.enable = false;
 
+        spawn-at-startup = [
+          { sh = "bash niri-waybar"; }
+        ];
+
         window-rules = [
           {
             geometry-corner-radius = {
