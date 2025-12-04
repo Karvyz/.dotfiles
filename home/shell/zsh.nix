@@ -53,7 +53,6 @@
 
     sessionVariables = {
       EDITOR = "nvim";
-      NH_FLAKE = "/home/karviz/.dotfiles";
     };
 
     shellAliases = {

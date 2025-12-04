@@ -21,6 +21,7 @@
     ./hypr
     ./shell
     ./niri.nix
+    ./nh.nix
     ./custom-options.nix
     ./nvf.nix
     ./gnome.nix

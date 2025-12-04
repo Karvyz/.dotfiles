@@ -17,7 +17,6 @@
     ./nextcloud.nix
     ./nvidia.nix
     ./sound.nix
-    ./updates.nix
     ./user.nix
     ./wm
     ./xdg.nix
