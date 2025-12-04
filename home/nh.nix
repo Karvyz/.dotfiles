@@ -4,7 +4,7 @@
     flake = "/home/karviz/.dotfiles";
     clean = {
       enable = true;
-      dates = "1d";
+      dates = "daily";
       extraArgs = "--keep 5 --keep-since 3d";
     };
   };
