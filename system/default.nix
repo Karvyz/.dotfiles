@@ -9,6 +9,7 @@
     ./flatpak.nix
     ./fonts.nix
     ./games.nix
+    ./gdm.nix
     ./gnome.nix
     ./kanata.nix
     ./kde.nix

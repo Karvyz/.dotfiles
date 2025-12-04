@@ -11,6 +11,7 @@
   };
 
   config = lib.mkIf config.gnome.enable {
+    gdm.enable = true;
     services.desktopManager.gnome.enable = true;
 
     environment.gnome.excludePackages = (

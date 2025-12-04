@@ -1,5 +1,4 @@
 {
-  inputs,
   lib,
   config,
   pkgs,
@@ -11,17 +10,15 @@
     ./niri.nix
   ];
 
-  options = {
-    wm.enable = lib.mkEnableOption "Enable Window Manager module";
-  };
+  options.wm.enable = lib.mkEnableOption "Enable Window Manager module";
 
   config = lib.mkIf config.wm.enable {
+    gdm.enable = true;
     programs.xwayland.enable = true;
     environment.systemPackages = with pkgs; [
       pavucontrol
       brightnessctl
       networkmanagerapplet
-      overskride
       hyprlock
 
       wofi
