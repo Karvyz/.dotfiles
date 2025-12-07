@@ -61,6 +61,9 @@
       ns = "nix-shell --command zsh";
       za = "zellij attach";
       de = "distrobox enter";
+
+      cr = "cargo run";
+      crr = "cargo run --release";
     };
   };
 }
