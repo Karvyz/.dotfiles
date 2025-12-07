@@ -11,7 +11,7 @@
   };
 
   config = lib.mkIf config.desktop.enable {
-
+    flatpak.enable = true;
     nixpkgs.config.allowUnfree = true;
 
     environment.systemPackages = with pkgs; [
@@ -20,7 +20,7 @@
       geary
 
       libreoffice
-      gimp3
+      gimp
 
       protonvpn-gui
       qbittorrent
