@@ -12,7 +12,7 @@
   config = lib.mkIf config.nextcloud.enable {
     services.nextcloud = {
       enable = true;
-      package = pkgs.nextcloud31;
+      package = pkgs.nextcloud32;
       extraAppsEnable = true;
       extraApps = {
         inherit (config.services.nextcloud.package.packages.apps)
