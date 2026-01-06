@@ -1,12 +1,12 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   programs = {
     zsh = {
       enable = true;
-
       syntaxHighlighting.enable = true;
       autosuggestion.enable = true;
       enableCompletion = true;
+      dotDir = "${config.xdg.configHome}/zsh";
     };
 
     nushell = {
@@ -26,6 +26,7 @@
         name = "Henri Gros";
         email = "henrigros1@gmail.com";
       };
+      ignores = [ ".nix-profile*" ];
     };
 
     bash.enable = true;
