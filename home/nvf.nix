@@ -89,8 +89,8 @@
 
           nix = {
             enable = true;
-            lsp.server = "nixd";
-            format.type = "nixfmt";
+            lsp.servers = [ "nixd" ];
+            format.type = [ "nixfmt" ];
           };
           rust = {
             enable = true;
