@@ -52,7 +52,7 @@
         layer-rules = [
           {
             matches = [
-              { namespace = "hyprpaper"; }
+              { namespace = "wpaperd"; }
             ];
             place-within-backdrop = true;
           }
@@ -86,6 +86,6 @@
       };
     };
 
-    hyprpaper.enable = true;
+    wpaperd.enable = true;
   };
 }

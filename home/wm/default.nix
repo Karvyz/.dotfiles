@@ -6,5 +6,6 @@
     ./hyprpaper.nix
     ./rofi.nix
     ./waybar.nix
+    ./wpaperd.nix
   ];
 }
