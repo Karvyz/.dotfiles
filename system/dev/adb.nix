@@ -11,7 +11,9 @@
 
   config = lib.mkIf config.adb.enable {
     users.users.karviz.extraGroups = [ "adbusers" ];
-    programs.adb.enable = true;
-    environment.systemPackages = [ pkgs.androidenv.androidPkgs.platform-tools ];
+    environment.systemPackages = [
+      pkgs.androidenv.androidPkgs.platform-tools
+      pkgs.android-tools
+    ];
   };
 }
