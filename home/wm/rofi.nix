@@ -1,7 +1,13 @@
-{ config, pkgs, ... }:
 {
-  programs.rofi = {
-    enable = false;
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
+  options.rofi.enable = lib.mkEnableOption "Enable rofi home module";
+  config.programs.rofi = {
+    enable = config.rofi.enable;
     cycle = true;
     location = "center";
     plugins = [

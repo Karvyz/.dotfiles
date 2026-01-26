@@ -1,6 +1,6 @@
 {
-  config,
   lib,
+  config,
   pkgs,
   ...
 }:
@@ -24,8 +24,9 @@ let
   };
 in
 {
-  programs.waybar = {
-    enable = true;
+  options.waybar.enable = lib.mkEnableOption "Enable waybar home module";
+  config.programs.waybar = {
+    enable = config.waybar.enable;
     systemd.enable = true;
 
     settings.default = {

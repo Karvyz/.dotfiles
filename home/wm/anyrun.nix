@@ -1,4 +1,5 @@
 {
+  lib,
   config,
   pkgs,
   ...
@@ -7,8 +8,9 @@ let
   palette = config.lib.stylix.colors.withHashtag;
 in
 {
-  programs.anyrun = {
-    enable = true;
+  options.anyrun.enable = lib.mkEnableOption "Enable anyrun home module";
+  config.programs.anyrun = {
+    enable = config.anyrun.enable;
     config = {
       y.fraction = 0.4;
       width.fraction = 0.4;

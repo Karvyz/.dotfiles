@@ -11,5 +11,5 @@
 
   options.noctalia.enable = lib.mkEnableOption "Enable noctalia home module";
 
-  programs.noctalia-shell.enable = config.noctalia-shell.enable;
+  config.programs.noctalia-shell.enable = config.noctalia.enable;
 }
