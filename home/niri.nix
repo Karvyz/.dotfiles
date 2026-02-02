@@ -53,6 +53,7 @@
           {
             matches = [
               { namespace = "wpaperd"; }
+              { namespace = "^noctalia-overview*"; }
             ];
             place-within-backdrop = true;
           }
@@ -86,6 +87,7 @@
       };
     };
 
-    wpaperd.enable = true;
+    # wpaperd.enable = true;
+    noctalia.enable = true;
   };
 }
