@@ -66,7 +66,7 @@
         modules = [
           ./home
           ./themes
-          stylix.homeManagerModules.stylix
+          stylix.homeModules.stylix
         ];
       };
     };

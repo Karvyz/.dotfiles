@@ -1,3 +1,4 @@
+{ inputs, pkgs, ... }:
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -14,9 +15,25 @@
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
   imports = [
+    ./nh.nix
     ./nvf.nix
     ./scripts
+    ./shell
   ];
+
+  nix = {
+    package = pkgs.nix;
+    # Enable Flakes
+    settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+
+    # Assert that system nixpkgs is the same as the one used in the flake
+    nixPath = [
+      "nixpkgs=${inputs.nixpkgs}"
+    ];
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
