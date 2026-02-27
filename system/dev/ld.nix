@@ -14,10 +14,10 @@
       clang
       lld
       # If on x11
-      xorg.libX11
-      xorg.libXcursor
-      xorg.libXi
-      xorg.libXrandr
+      libX11
+      libXcursor
+      libXi
+      libXrandr
       # If on wayland
       libxkbcommon
       wayland
