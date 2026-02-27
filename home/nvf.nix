@@ -1,6 +1,6 @@
 {
   inputs,
-  pkgs,
+  lib,
   ...
 }:
 {
@@ -9,6 +9,7 @@
     enable = true;
     settings = {
       vim = {
+        lazy.enable = false;
         viAlias = true;
         vimAlias = true;
 
@@ -83,6 +84,37 @@
           motion.flash-nvim.enable = true;
         };
 
+        assistant.codecompanion-nvim = {
+          enable = true;
+          setupOpts = {
+            strategies = {
+              chat.adapter = "openrouter";
+              inline.adapter = "openrouter";
+              agent.adapter = "openrouter";
+            };
+            adapters = lib.generators.mkLuaInline ''
+              {
+                http = {
+                  openrouter = function()
+                    return require("codecompanion.adapters").extend("openai_compatible", {
+                      env = {
+                        url = "https://openrouter.ai/api",
+                        api_key = "OPENROUTER_API_KEY",
+                        chat_url = "/v1/chat/completions",
+                      },
+                      schema = {
+                        model = {
+                          default = "minimax/minimax-m2.5",
+                        },
+                      },
+                    })
+                  end,
+                },
+              }
+            '';
+          };
+        };
+
         languages = {
           enableTreesitter = true;
           enableFormat = true;
@@ -106,6 +138,11 @@
             key = "-";
             mode = "n";
             action = ":Oil<CR>";
+          }
+          {
+            key = "<leader>a";
+            mode = "n";
+            action = ":CodeCompanionChat toggle<CR>";
           }
         ];
       };
