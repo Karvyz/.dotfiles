@@ -131,6 +131,16 @@
           clang.enable = true;
           python.enable = true;
           bash.enable = true;
+          markdown = {
+            enable = true;
+            extensions.render-markdown-nvim = {
+              enable = true;
+              setupOpts.file_types = [
+                "markdown"
+                "codecompanion"
+              ];
+            };
+          };
         };
 
         keymaps = [
